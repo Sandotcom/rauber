@@ -1,0 +1,32 @@
+.container{
+  background: black;
+  height: 80px;
+  width: 99vw;
+  color: #F1FAEE;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 1em;
+  border-bottom: 1px solid gainsboro;
+}
+
+.logo{
+  display: flex;
+  flex-direction: row;
+}
+
+.logo:hover{
+  cursor: pointer;
+}
+
+.menu{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.menu p{
+  padding: 1em;
+  cursor: pointer;
+}
