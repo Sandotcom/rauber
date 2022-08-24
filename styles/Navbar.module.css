@@ -1,7 +1,7 @@
 .container{
   background: black;
   height: 80px;
-  width: 99vw;
+  width: 100%;
   color: #F1FAEE;
   display: flex;
   justify-content: space-between;

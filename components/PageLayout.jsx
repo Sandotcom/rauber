@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Navbar from './Navbar'
+import Footer from './Footer'
 
 export default function PageLayout({ children, title = 'Räuber Cerveza' }){
   return (
@@ -13,9 +14,7 @@ export default function PageLayout({ children, title = 'Räuber Cerveza' }){
       <main>
         {children}
       </main>
-      <footer>
-        Footer
-      </footer>
+      <Footer />
     </>
   )
 }
