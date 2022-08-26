@@ -14,10 +14,12 @@
 .logo{
   display: flex;
   flex-direction: row;
+  cursor: pointer;
 }
 
-.logo:hover{
-  cursor: pointer;
+.logo img{
+  max-width: 50px;
+  max-height: 50px;
 }
 
 .menu{

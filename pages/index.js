@@ -1,6 +1,7 @@
 import PageLayout from '../components/PageLayout'
 import styles from '../styles/Home.module.css'
 import cervezas from '../constants/cervezas'
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -39,16 +40,16 @@ export default function Home() {
 
             <div className={styles.cards}>
               {cervezas.map((e) => (
-                <div id={e.id} className={styles.card}>
+                <Link key={e.id} href={`cervezas/${e.id}`}>
+                <div key={e.id} className={styles.card}>
                   <h4>{e.name}</h4>
-                  <img src={e.image[0]} alt={e.name} />                  
+                  <img src={e.portada} alt={e.name} />                  
                   <p>{e.description}</p>
                 </div>
+                </Link>
               ))}
 
             </div>
-
-            {/* Cards con latas */}
 
           </div>
 
