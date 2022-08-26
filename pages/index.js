@@ -1,15 +1,17 @@
 import PageLayout from '../components/PageLayout'
 import styles from '../styles/Home.module.css'
+import cervezas from '../constants/cervezas'
 
 export default function Home() {
   return (
     <PageLayout title='Rauber Cerveza Artesanal'>
       <div className={styles.container}>
         <div className={styles.main}>
+
           <h1>Räuber</h1>
           <h3>Un equipo de amigos que lo da todo por la cerveza artesanal platense</h3>
 
-          {/* Carrousel de imagenes */}
+          <img className={styles.banner} src='/banner1.jpg' />
 
           <div className={styles.section}>
 
@@ -34,6 +36,17 @@ export default function Home() {
 
           <div className={styles.section}>
             <h2>Nuestras cervezas</h2>
+
+            <div className={styles.cards}>
+              {cervezas.map((e) => (
+                <div id={e.id} className={styles.card}>
+                  <h4>{e.name}</h4>
+                  <img src={e.image[0]} alt={e.name} />                  
+                  <p>{e.description}</p>
+                </div>
+              ))}
+
+            </div>
 
             {/* Cards con latas */}
 
