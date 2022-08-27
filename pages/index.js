@@ -9,9 +9,6 @@ export default function Home() {
       <div className={styles.container}>
         <div className={styles.main}>
 
-          <h1>Räuber</h1>
-          <h3>Un equipo de amigos que lo da todo por la cerveza artesanal platense</h3>
-
           <img className={styles.banner} src='/banner1.jpg' />
 
           <div className={styles.section}>

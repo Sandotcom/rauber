@@ -4,14 +4,11 @@ import styles from '../styles/Navbar.module.css'
 
 export default function Navbar(){
   return(
-    <nav className={styles.container}>
-      <Link href='/'>
-      <div className={styles.logo}>
-          <Image src='/favicon.png' alt="Rauber cerveza artesanal" width={50} height={60} />
-      </div>
-      </Link>
+    <div className={styles.containerGeneral}><div className={styles.titleRauber}>
+      <Image href='/' src='/favicon.png' alt="Rauber cerveza artesanal" width={190} height={200} />
+</div>
+  <nav className={styles.container}>
       <div className={styles.menu}>
-
         <Link href='cervezas'>
           <p>
             Nuestras cervezas
@@ -19,7 +16,7 @@ export default function Navbar(){
           </p>
         </Link>
 
-        <Link href='/medallas'>    
+        <Link href='/medallas'>
           <p>
             Medallas
           </p>
@@ -28,10 +25,10 @@ export default function Navbar(){
         <Link href='/about'>
           <p>
             Acerca de nosotros
-          </p>        
+          </p>
         </Link>
 
-        <Link href='/productos'>        
+        <Link href='/productos'>
           <p>
             Latas
           </p>
@@ -43,6 +40,6 @@ export default function Navbar(){
           </p>
         </Link>
       </div>
-    </nav>
+    </nav></div>
   )
 }
