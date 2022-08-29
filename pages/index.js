@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 export default function Home() {
   return (
-    <PageLayout title='Rauber Cerveza Artesanal'>
+    <PageLayout title='Räuber Cerveza'>
       <div className={styles.container}>
         <div className={styles.main}>
 
