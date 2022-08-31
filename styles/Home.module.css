@@ -1,5 +1,6 @@
 .container {
   padding: 0 2rem;
+  color: white;
 }
 
 .main {
@@ -14,10 +15,16 @@
 
 .banner{
   max-height: 700px;
+  border-radius: 10px;
+  padding-bottom: 64px;
 }
 
 .section{
-  border-top: 1px solid grey;
+  padding-bottom: 64px;
+  text-align: center;
+}
+.section h2{
+  padding-bottom: 26px;
 }
 
 .cards{

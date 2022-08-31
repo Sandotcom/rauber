@@ -5,12 +5,9 @@ import Link from 'next/link'
 
 export default function Home() {
   return (
-    <PageLayout title='Rauber Cerveza Artesanal'>
+    <PageLayout title='Räuber Cerveza'>
       <div className={styles.container}>
         <div className={styles.main}>
-
-          <h1>Räuber</h1>
-          <h3>Un equipo de amigos que lo da todo por la cerveza artesanal platense</h3>
 
           <img className={styles.banner} src='/banner1.jpg' />
 

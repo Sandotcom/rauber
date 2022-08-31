@@ -7,7 +7,7 @@ export default function PageLayout({ children, title = 'Räuber Cerveza' }){
     <>
       <Head>
         <title>{title}</title>
-        <meta name="description" content="Rauber cerveza artesanal" />
+        <meta name="description" content="Räuber. Un grupo de amigos que lo da todo por la cerveza artesanal platense." />
         <link rel="icon" href="/favicon.png" />
       </Head>
       <Navbar />
