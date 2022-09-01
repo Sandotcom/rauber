@@ -48,6 +48,13 @@
   height: 500px;
 }
 
+.cardFooter{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 350px;
+}
+
 .card img{
   border-radius: 8px;
   width: 350px;

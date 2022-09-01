@@ -42,3 +42,17 @@
 .titleRauber:hover{
   transform: scale(1.1);
 }
+
+.cart{
+  background-color: green;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 0;
+  transition: all .2s;
+  filter: blur(0);
+}
+
+.cart:hover{
+  transform: scale(1.1);
+  filter: blur(0)
+}

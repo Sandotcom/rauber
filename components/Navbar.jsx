@@ -1,8 +1,11 @@
 import Image from "next/image"
+import { useSelector } from 'react-redux'
 import Link from 'next/link'
 import styles from '../styles/Navbar.module.css'
 
 export default function Navbar(){
+  const cart = useSelector(state => state.cart)
+
   return(
     <div className={styles.containerGeneral}>
         <Link href='/'>
@@ -30,6 +33,10 @@ export default function Navbar(){
           <Link href='/contacto'>
             <p>Vende Rauber</p>
           </Link>
+
+          <div className={styles.cart}>
+            <p>Ver carrito ({cart.length} productos)</p>
+          </div>
         </div>
       </nav>
     </div>

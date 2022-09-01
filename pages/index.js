@@ -1,7 +1,6 @@
 import PageLayout from '../components/PageLayout'
 import styles from '../styles/Home.module.css'
-import cervezas from '../constants/cervezas'
-import Link from 'next/link'
+import Products from '../components/Products'
 
 export default function Home() {
   return (
@@ -32,27 +31,11 @@ export default function Home() {
 
           </div>
 
-          <div className={styles.section}>
-            <h2>Nuestras cervezas</h2>
-
-            <div className={styles.cards}>
-              {cervezas.map((e) => (
-                <Link key={e.id} href={`cervezas/${e.id}`}>
-                <div key={e.id} className={styles.card}>
-                  <h4>{e.name}</h4>
-                  <img src={e.portada} alt={e.name} />                  
-                  <p>{e.description}</p>
-                </div>
-                </Link>
-              ))}
-
-            </div>
-
-          </div>
+          <Products />
 
           <div className={styles.section}></div>
 
-          <h2>Medallas</h2>
+          <h2>Logros</h2>
 
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vel vehicula nisi. Quisque congue ut nunc vel fermentum. Donec malesuada pharetra suscipit. 
