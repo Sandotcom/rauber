@@ -81,7 +81,7 @@ export default function Navbar(){
         leaveFrom='transform opacity-100 scale-100'
         leaveTo='transform opacity-0 scale-75'
       >
-        <div className='absolute w-full max-h-96 bg-stone-200 font-medium px-8 py-8 md:w-1/4 md:right-0 md:max-h-screen shadow-md'>
+        <div className='absolute w-full bg-stone-200 font-medium px-8 py-8 md:w-1/4 md:right-0 md:max-h-screen shadow-md'>
             <CartMenu />
         </div>
       </Transition>
