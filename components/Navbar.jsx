@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from 'next/link'
 import { useState } from "react"
 import { useSelector } from "react-redux"
+import { AiOutlineShoppingCart, AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 
 export default function Navbar(){
   const cart = useSelector(state => state.cart)
@@ -38,18 +39,22 @@ export default function Navbar(){
             <p className='font-medium mr-1'>({cart.length})</p>
             <div>
               {cart.length > 0 ? 
-                <Image src='/cartIconSolid.svg' width={20} height={20} />        
+              <AiOutlineShoppingCart className='w-5 h-5'/>
+                // <Image src='/cartIconSolid.svg' width={20} height={20} />        
               : 
-                <Image src='/cartIconOut.svg' width={20} height={20} />    
+              <AiOutlineShoppingCart className='w-5 h-5'/>
+                // <Image src='/cartIconOut.svg' width={20} height={20} />    
               }
             </div>
           </div>
           
           <button className='md:hidden ml-4' onClick={handleToggleMenu}>
             {toggleMenu ? 
-              <Image src='/xmark.svg' width={20} height={20} />
+              <AiOutlineClose className='w-5 h-5'/>
+              // <Image src='/xmark.svg' width={20} height={20} />
               :
-              <Image src="/menu.svg" width={20} height={20} />
+              <AiOutlineMenu className='w-5 h-5'/>
+              // <Image src="/menu.svg" width={20} height={20} />
             }            
           </button>
 
