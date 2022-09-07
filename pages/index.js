@@ -1,18 +1,18 @@
 import PageLayout from '../components/PageLayout'
-import styles from '../styles/Home.module.css'
 import Products from '../components/Products'
 
 export default function Home() {
   return (
     <PageLayout title='Räuber Cerveza'>
-      <div className='flex flex-col justify-center items-center'>
-        <div className='bg-blend-multiply bg-cover'>
-          <img className='max-w-fit max-h-fit' src='/banner1.jpg' />
-          <h2>¿Quiénes somos?</h2>
-        </div>
+      <div className='flex flex-col'>
+        <div className='flex flex-col md:grid md:grid-cols-2'>
 
-        <div>
-          <p>
+          <div className='px-4 py-4 md:px-20'>
+            <img className='w-auto h-auto rounded-xl' src='/banner1.jpg' />
+          </div>
+          <div className=''>
+            <h2>¿Quiénes somos?</h2>
+            <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vel vehicula nisi. Quisque congue ut nunc vel fermentum. Donec malesuada pharetra suscipit. 
             Nulla enim tortor, accumsan a tincidunt congue, viverra in ante. Suspendisse non eleifend mi. Aenean eu dui pharetra dui vestibulum vulputate. 
             Duis feugiat pretium risus pretium porta. Morbi pulvinar sed sapien in tempor. Proin varius consequat enim in sollicitudin. 
@@ -24,12 +24,15 @@ export default function Home() {
             Sed quis egestas felis. Aliquam consectetur neque quis augue porta vehicula. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
             Pellentesque at erat ut est sagittis luctus et sit amet sem. Nunc venenatis ut mauris eu ullamcorper. Mauris interdum venenatis libero quis rutrum.
             Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean finibus mi sit amet erat fermentum finibus.
-          </p>
+            </p>
+          </div>
+          
+
         </div>
 
-        <Products />
+        {/* <Products /> */}
 
-        <div className={styles.section}>
+        <div>
           <h2>Logros</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vel vehicula nisi. Quisque congue ut nunc vel fermentum. Donec malesuada pharetra suscipit. 

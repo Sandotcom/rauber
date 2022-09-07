@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import styles from '../styles/Home.module.css'
 import cervezas from '../constants/cervezas'
 import Link from 'next/link'
 import { ADD_ITEM } from '../app/actions/actionTypes'
@@ -25,24 +24,37 @@ const Products = () => {
   }
   
   return (
-    <div className={styles.section}>
+    <div>
       <h2>Nuestras cervezas</h2>
 
-      <div className={styles.cards}>
-        {cervezas.map((product) => (
-          <div key={product.id} className={styles.card}>
-            <Link key={product.id} href={`cervezas/${product.id}`}>
-              <div>
-                <h4>{product.name}</h4>
-                <img src={product.portada} alt={product.name} />
-                <div className={styles.cardFooter}>
-                  <p>{product.description}</p>
-                  <p>${product.price}</p>
+      <div>
+        {cervezas.map((product) => (         
+            <div key={product.id} className='flex font-poppins rounded-md shadow-md bg-gray-200'>
+              <div className='flex-none relative'>
+                <img src={product.portada} alt={product.name} className='absolute inset-0 w-full h-full object-cover rounded-l-md' />
+              </div>
+              <div className='flex-auto p-6 border-slate-900'>
+                <div className='flex flex-wrap'>
+                  <h4 className='flex-auto text-lg font-semibold text-slate-900'>{product.name}</h4>
+                  <p className='text-lg font-semibold text-slate-500'>${product.price}</p>
+                  <p className='w-full flex-none text-sm font-medium text-slate-700 mt-2'>{product.description}</p>
+                </div>
+                
+                <div className="flex mt-6 text-sm font-medium">
+                  <div className="flex-auto flex space-x-4">
+                    <button className="h-10 px-6 font-semibold rounded-md bg-black text-white" type='button' onClick={(e) => onClick(e, product)}>
+                      Agregar
+                    </button>
+                    <Link key={product.id} href={`cervezas/${product.id}`}>
+                    <button className="h-10 px-6 font-semibold rounded-md border border-slate-200 text-slate-900" type="button">
+                      Detalle
+                    </button>
+                    </Link>
+                  </div>
+                  
                 </div>
               </div>
-            </Link>
-            <button type='button' onClick={(e) => onClick(e, product)}>Agregar</button>
-          </div>
+            </div>
         ))}
       </div>
       {cart.length > 0 && 
