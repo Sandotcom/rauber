@@ -10,7 +10,7 @@ export default function Navbar(){
   const handleToggleMenu = () => setToggleMenu((prevToggleMenu) => !prevToggleMenu)
 
   return(
-    <nav className='w-full h-20 bg-gray-100 fixed shadow-md z-30 font-poppins font-normal'>
+    <nav className='w-full h-20 bg-stone-200 fixed shadow-md z-30 font-poppins font-normal'>
 
       <div className='px-2 flex justify-between items-center w-full h-full'>
         
@@ -56,15 +56,15 @@ export default function Navbar(){
         </div>
       </div>
 
-      <ul className={toggleMenu ? 'absolute w-full -mt-1 bg-gray-100 font-medium px-8 py-8 shadow-md' : 'hidden'}>
+      <ul className={toggleMenu ? 'absolute w-full -mt-1 bg-stone-200 font-medium px-8 py-8 shadow-md' : 'hidden'}>
         <Link href='/productos'>
-          <li className='border-b border-gray-200 my-4 w-full'>Productos</li>
+          <li className='border-b border-stone-300 my-4 w-full'>Productos</li>
         </Link>
         <Link href='/about'>
-          <li className='border-b border-gray-200 my-4 w-full'>Acerca de</li>
+          <li className='border-b border-stone-300 my-4 w-full'>Acerca de</li>
         </Link>
         <Link href='/'>
-          <li className='border-b border-gray-200 my-4 w-full'>Vendé Räuber</li>
+          <li className='border-b border-stone-300 mt-4 w-full'>Vendé Räuber</li>
         </Link>
       </ul>
     </nav>
