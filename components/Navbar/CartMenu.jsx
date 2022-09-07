@@ -4,7 +4,6 @@ import CartItem from './CartItem'
 
 const CartMenu = () => {
   const cart = useSelector(state => state.cart)
-  console.log(cart)
 
   if(cart.length === 0){
     return (
@@ -14,9 +13,11 @@ const CartMenu = () => {
     )
   } else {
     return (
-      <div className='flex flex-col'>       
-        {cart.map((item) => (
-          <CartItem id={item.id} name={item.name} type={item.type} price={item.price} image={item.portada} />
+      <div className='flex flex-col '>       
+        {cart.map((item, i) => (
+          <div key={i} className='justify-between pb-2 my-1 border-b border-stone-300'>
+            <CartItem id={item.id} name={item.name} type={item.type} price={item.price} image={item.portada} />
+          </div>
         ))}
       </div>
     )

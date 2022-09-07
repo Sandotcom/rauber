@@ -6,7 +6,9 @@ const Logo = () => {
   return (
     <div className='flex items-center text-neutral-100'>
       <Link href='/'>
-        <Image src='/favicon.png' alt="Rauber cerveza artesanal" width={50} height={60} />
+        <div>
+          <Image src='/favicon.png' alt="Rauber cerveza artesanal" width={50} height={60} />
+        </div>
       </Link>
 
       <ul className="hidden md:flex ml-4 space-x-5">
