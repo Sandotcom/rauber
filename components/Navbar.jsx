@@ -12,13 +12,12 @@ export default function Navbar(){
   const handleToggleMenu = () => setToggleMenu((prevToggleMenu) => !prevToggleMenu)
 
   return(
-    <nav className='w-full h-20 bg-stone-200 fixed shadow-md z-30 font-poppins font-normal'>
+    <nav className='w-full h-20 bg-neutral-800 fixed shadow-md z-30 font-poppins font-normal'>
 
-      <div className='px-2 flex justify-between items-center w-full h-full'>
-        
-        <div className='flex items-center text-neutral-900'>
+      <div className='px-2 flex justify-between items-center w-full h-full'>        
+        <div className='flex items-center text-neutral-100'>
           <Link href='/'>
-            <Image src='/faviconblack.png' alt="Rauber cerveza artesanal" width={50} height={60} />
+            <Image src='/favicon.png' alt="Rauber cerveza artesanal" width={50} height={60} />
           </Link>
           <ul className="hidden md:flex ml-4 space-x-5">
             <Link href='/productos'>
@@ -33,11 +32,10 @@ export default function Navbar(){
           </ul>
         </div>
 
-        <div className='flex px-4'>
-
+        <div className='flex px-4 text-neutral-100'>
           <div className="flex cursor-pointer">
             <p className='hidden md:flex mr-1'>Carrito</p>
-            <p className='font-medium mr-1'>({cart.length})</p>
+            <p className='mr-1'>({cart.length})</p>
             <div>
               {cart.length > 0 ? 
               <ShoppingCartIconSolid className='w-5 h-5'/>      
@@ -54,13 +52,12 @@ export default function Navbar(){
               <Bars3Icon className='w-6 h-6'/>
             }            
           </button>
-
         </div>
       </div>
 
-      <ul className={toggleMenu ? 'absolute w-full -mt-1 bg-stone-200 font-medium px-8 py-8 shadow-md' : 'hidden'}>
+      <ul className={toggleMenu ? 'absolute w-full bg-stone-200 font-medium px-8 py-8 shadow-md' : 'hidden'}>
         <Link href='/productos'>
-          <li className='border-b border-stone-300 my-4 w-full'>Productos</li>
+          <li className='border-b border-stone-300 w-full'>Productos</li>
         </Link>
         <Link href='/about'>
           <li className='border-b border-stone-300 my-4 w-full'>Acerca de</li>
@@ -69,6 +66,7 @@ export default function Navbar(){
           <li className='border-b border-stone-300 mt-4 w-full'>Vendé Räuber</li>
         </Link>
       </ul>
+
     </nav>
   )
 }
