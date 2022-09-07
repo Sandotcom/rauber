@@ -2,7 +2,8 @@ import Image from "next/image"
 import Link from 'next/link'
 import { useState } from "react"
 import { useSelector } from "react-redux"
-import { AiOutlineShoppingCart, AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
+import { ShoppingCartIcon } from '@heroicons/react/24/outline'
+import { ShoppingCartIcon as ShoppingCartIconSolid, Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid'
 
 export default function Navbar(){
   const cart = useSelector(state => state.cart)
@@ -39,22 +40,18 @@ export default function Navbar(){
             <p className='font-medium mr-1'>({cart.length})</p>
             <div>
               {cart.length > 0 ? 
-              <AiOutlineShoppingCart className='w-5 h-5'/>
-                // <Image src='/cartIconSolid.svg' width={20} height={20} />        
+              <ShoppingCartIconSolid className='w-5 h-5'/>      
               : 
-              <AiOutlineShoppingCart className='w-5 h-5'/>
-                // <Image src='/cartIconOut.svg' width={20} height={20} />    
+              <ShoppingCartIcon className='w-5 h-5'/>  
               }
             </div>
           </div>
           
           <button className='md:hidden ml-4' onClick={handleToggleMenu}>
             {toggleMenu ? 
-              <AiOutlineClose className='w-5 h-5'/>
-              // <Image src='/xmark.svg' width={20} height={20} />
+              <XMarkIcon className='w-6 h-6'/>
               :
-              <AiOutlineMenu className='w-5 h-5'/>
-              // <Image src="/menu.svg" width={20} height={20} />
+              <Bars3Icon className='w-6 h-6'/>
             }            
           </button>
 
