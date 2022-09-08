@@ -77,11 +77,11 @@ export default function Navbar(){
         leaveFrom='transform opacity-100 scale-100'
         leaveTo='transform opacity-0 scale-75'
       >
-        <ul className='absolute w-full bg-neutral-200 font-medium px-8 py-8 shadow-md'>
+        <div className='absolute w-full bg-neutral-200 font-medium px-8 py-8 shadow-md'>
 
           <MenuResponsive cart={cart} />     
 
-        </ul>
+        </div>
       </Transition>
 
       {/* Carrito de compras */}

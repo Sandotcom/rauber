@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const MenuResponsive = ({ cart }) => {
   return (
-    <div>
+    <ul>
       <Link href='/productos'>
           <li className='border-b border-stone-500 w-full'>{'>'} Productos</li>
       </Link>
@@ -19,7 +19,7 @@ const MenuResponsive = ({ cart }) => {
           <li className='border-b border-stone-500 w-full'>{'>'} Ver carrito ({cart.length} productos)</li>
         </Link>
       }
-    </div>
+    </ul>
   )
 }
 
