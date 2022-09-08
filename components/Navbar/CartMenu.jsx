@@ -19,8 +19,8 @@ const CartMenu = () => {
         ))}
 
         <div className='flex flex-row justify-between py-2 space-x-1 font-poppins text-sm font-semibold'>
-          <button className='h-10 px-6 font-semibold rounded-md border border-slate-800 text-slate-900'>Modificar carrito</button>
-          <button className='h-10 px-6 font-semibold rounded-md bg-green-700 text-white'>Finalizar pedido</button>
+          <button className='h-10 px-5 font-semibold rounded-md border border-slate-800 text-slate-900'>Modificar carrito</button>
+          <button className='h-10 px-5 font-semibold rounded-md bg-green-700 text-white'>Finalizar pedido</button>
         </div>
       </div>
     )

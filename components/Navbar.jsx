@@ -17,7 +17,7 @@ export default function Navbar(){
   const handleCart = () => setToggleCart((prevCart) => !prevCart)
 
   return(
-    <nav className='w-full h-20 bg-neutral-800 fixed shadow-md z-30 font-montserrat font-normal'>
+    <nav className='w-full h-20 bg-neutral-900 fixed shadow-md z-30 font-poppins font-medium'>
 
       <div className='px-2 flex justify-between items-center w-full h-full'>
         {/* <----- LEFT SIDE NAVBAR ----->      */}
@@ -30,7 +30,7 @@ export default function Navbar(){
 
         <div className='flex px-4 text-neutral-100'>
 
-          {/* Cart icon */}
+          {/* Cart div & icon */}
           {!toggleMenu && 
             <div className="flex cursor-pointer" onClick={handleCart}>
               <div className="flex flex-row">
