@@ -20,7 +20,7 @@ const CartMenu = () => {
         ))}
 
       <div className='flex flex-col justify-between mt-6 space-y-1'>
-        <div className='flex flex-row justify-between font-bold'>
+        <div className='flex flex-row justify-between text-lg font-semibold'>
           <p>Total</p>
           <p>$ 1800</p>
         </div>
