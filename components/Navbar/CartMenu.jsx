@@ -8,8 +8,12 @@ const CartMenu = () => {
 
   if(cart.length === 0){
     return (
-      <div className='flex flex-col'>
-        <p className='font-light'>Tu carrito está vacío</p>
+      <div className='flex flex-col text-center gap-8'>
+        <p className='font-normal'>Tu carrito está vacío</p>
+
+        <Link href='/productos'>
+            <button className='h-10 px-5 font-semibold rounded-md bg-green-700 text-white'>Conocé nuestros productos</button>
+          </Link>
       </div>
     )
   } else {
@@ -26,7 +30,7 @@ const CartMenu = () => {
         </div>
 
         <div className='flex flex-row justify-between pt-2 space-x-1 text-sm'>
-          <Link href='/checkout'>
+          <Link href='/carrito'>
             <button className='h-10 px-5 font-semibold rounded-md border border-slate-800 text-slate-900'>Modificar carrito</button>
           </Link>
             

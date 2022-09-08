@@ -3,7 +3,7 @@ import Products from '../components/Products'
 
 export default function Home() {
   return (
-    <PageLayout title='Räuber Cerveza'>
+    <PageLayout title='Räuber Cerveza Artesanal'>
       <div className='flex flex-col'>
         <div className='flex flex-col md:grid md:grid-cols-2'>
 

@@ -5,7 +5,7 @@ export default function Cart(){
   const cart = useSelector(state => state.cart)
 
   return (
-    <PageLayout title="Finalizar pedido">
+    <PageLayout title="Räuber - Finalizar pedido">
       <div>
         <h1>Finalizar pedido</h1>
         <div>
