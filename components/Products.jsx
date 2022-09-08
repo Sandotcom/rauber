@@ -40,13 +40,13 @@ const Products = () => {
                   <p className='w-full flex-none text-sm font-medium text-slate-700 mt-2'>{product.description}</p>
                 </div>
                 
-                <div className="flex mt-6 text-sm font-medium">
+                <div className="flex mt-6 text-sm">
                   <div className="flex-auto flex space-x-4">
                     <button className="h-10 px-6 font-semibold rounded-md bg-black text-white" type='button' onClick={(e) => onClick(e, product)}>
                       Agregar
                     </button>
                     <Link key={product.id} href={`cervezas/${product.id}`}>
-                    <button className="h-10 px-6 font-semibold rounded-md border border-slate-200 text-slate-900" type="button">
+                    <button className="h-10 px-6 font-semibold rounded-md border border-slate-800 text-slate-900" type="button">
                       Detalle
                     </button>
                     </Link>

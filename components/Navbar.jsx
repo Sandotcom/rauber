@@ -17,27 +17,35 @@ export default function Navbar(){
   const handleCart = () => setToggleCart((prevCart) => !prevCart)
 
   return(
-    <nav className='w-full h-20 bg-neutral-800 fixed shadow-md z-30 font-poppins font-normal'>
+    <nav className='w-full h-20 bg-neutral-800 fixed shadow-md z-30 font-montserrat font-normal'>
 
-      <div className='px-2 flex justify-between items-center w-full h-full'>        
+      <div className='px-2 flex justify-between items-center w-full h-full'>
+        {/* <----- LEFT SIDE NAVBAR ----->      */}
         
         <Logo />
 
+        {/* <----- END OF LEFT SIDE NAVBAR ----->      */}
+
+        {/* RIGHT SIDE NAVBAR */}
+
         <div className='flex px-4 text-neutral-100'>
+
+          {/* Cart icon */}
           {!toggleMenu && 
             <div className="flex cursor-pointer" onClick={handleCart}>
               <div className="flex flex-row">
                 <p className='hidden md:flex mr-1'>Carrito</p>
                 <p className='mr-1'>({cart.length})</p>
                 {cart.length > 0 ? 
-                <ShoppingCartIconSolid className='w-5 h-5'/>      
-                : 
-                <ShoppingCartIcon className='w-5 h-5'/>  
+                  <ShoppingCartIconSolid className='w-5 h-5'/>      
+                  : 
+                  <ShoppingCartIcon className='w-5 h-5'/>  
                 }
               </div>
             </div>
           }
           
+          {/* Close & Menu icons */}
           {toggleCart ? 
             <button className='md:hidden ml-4' onClick={handleCart}>
               {toggleCart ? 
@@ -58,6 +66,8 @@ export default function Navbar(){
         </div>
       </div>
       
+  
+      {/* Menu responsive */}
       <Transition 
         show={toggleMenu}
         enter='transition ease-out duration-150'
@@ -67,11 +77,15 @@ export default function Navbar(){
         leaveFrom='transform opacity-100 scale-100'
         leaveTo='transform opacity-0 scale-75'
       >
-        <ul className='absolute w-full bg-stone-200 font-medium px-8 py-8 shadow-md'>
+        <ul className='absolute w-full bg-neutral-200 font-medium px-8 py-8 shadow-md'>
+
           <MenuResponsive cart={cart} />     
+
         </ul>
       </Transition>
-      
+
+      {/* Carrito de compras */}
+
       <Transition 
         show={toggleCart}
         enter='transition ease-out duration-150'
@@ -81,8 +95,10 @@ export default function Navbar(){
         leaveFrom='transform opacity-100 scale-100'
         leaveTo='transform opacity-0 scale-75'
       >
-        <div className='absolute w-full bg-stone-200 font-medium px-8 py-8 md:w-1/4 md:right-0 md:max-h-screen shadow-md'>
+        <div className='absolute w-full bg-neutral-200 font-semibold px-4 py-4 md:w-1/4 md:right-0 md:max-h-screen shadow-md'>
+
             <CartMenu />
+
         </div>
       </Transition>
 

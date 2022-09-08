@@ -13,12 +13,15 @@ const CartMenu = () => {
     )
   } else {
     return (
-      <div className='flex flex-col '>       
+      <div className='flex flex-col justify-between'>       
         {cart.map((item, i) => (
-          <div key={i} className='justify-between pb-2 my-1 border-b border-stone-300'>
-            <CartItem id={item.id} name={item.name} type={item.type} price={item.price} image={item.portada} />
-          </div>
+          <CartItem key={i} id={item.id} name={item.name} type={item.type} price={item.price} image={item.portada} />
         ))}
+
+        <div className='flex flex-row justify-between py-2 space-x-1 font-poppins text-sm font-semibold'>
+          <button className='h-10 px-6 font-semibold rounded-md border border-slate-800 text-slate-900'>Modificar carrito</button>
+          <button className='h-10 px-6 font-semibold rounded-md bg-green-700 text-white'>Finalizar pedido</button>
+        </div>
       </div>
     )
   }
