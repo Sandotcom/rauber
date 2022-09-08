@@ -11,10 +11,10 @@ export default function PageLayout({ children, title = 'Räuber Cerveza' }){
         <link rel="icon" href="/favicon.png" />
       </Head>
       <Navbar />
-      <main>
+      <main className='bg-neutral-100 scroll-smooth font-montserrat w-full pt-20'>
         {children}
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }
