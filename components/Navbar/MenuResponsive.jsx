@@ -11,7 +11,10 @@ const MenuResponsive = ({ cart }) => {
         <li className='border-b border-stone-500 my-4 w-full'>{'>'} Acerca de</li>
       </Link>
       <Link href='/'>
-        <li className='border-b border-stone-500 my-4 w-full'>{'>'} Contacto</li>
+        <li className='border-b border-stone-500 my-4 w-full'>{'>'} Barriles</li>
+      </Link>
+      <Link href='/'>
+        <li className='border-b border-stone-500 my-4 w-full'>{'>'} Vende Rauber</li>
       </Link>
 
       {cart.length > 0 && 
