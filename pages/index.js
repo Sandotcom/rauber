@@ -12,7 +12,7 @@ export default function Home() {
           </div>
           <div className='flex flex-col space-y-2 pt-4'>
             <h2 className='font-semibold text-xl'>¿Quiénes somos?</h2>
-            <p className='font-montserrat'>Un equipo de amigos que lo da todo por la cerveza artesanal platense</p>
+            <p className='font-zilla'>Un equipo de amigos que lo da todo por la cerveza artesanal platense</p>
 
             <div className='pt-2'>
               <Link href='/about'>

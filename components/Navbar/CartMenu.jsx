@@ -28,10 +28,11 @@ const CartMenu = () => {
     )
   } else {
     return (
-      <div className='flex flex-col justify-between'>       
+      <div className='flex flex-col justify-between'>
         {cart.map((item, i) => (
           <CartItem key={i} id={item.id} name={item.name} type={item.type} price={item.price} image={item.portada} />
-        ))}
+          )
+        )}
 
         <div className='flex flex-col justify-between mt-6 space-y-1'>
           <div className='flex flex-row justify-between text-lg font-semibold'>
