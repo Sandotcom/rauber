@@ -12,7 +12,7 @@ const CartItem = ({ id, name, type, price, image }) => {
           <p className={name.length > 12 ? 'text-sm' : undefined}>{name}</p>
           <div className='flex flex-row text-sm w-16 justify-between'>
             <p className='px-2 rounded-l-md bg-stone-300'>-</p>
-            <p>1</p>
+            <p className='px-2'>1</p>
             <p className='px-2 rounded-r-md  bg-neutral-800 text-white'>+</p>
           </div>
         </div>
