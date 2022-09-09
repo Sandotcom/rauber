@@ -40,13 +40,9 @@ const CartMenu = () => {
             <p>$ {cart.reduce((total, product) => total + product.price, 0)}</p>
           </div>
 
-          <div className='flex flex-row justify-between pt-2 space-x-1 text-sm'>
-            <Link href='/carrito'>
-              <button className='h-10 px-5 font-semibold rounded-md border border-slate-800 text-slate-900'>Modificar carrito</button>
-            </Link>
-              
+          <div className='flex flex-row justify-end pt-2'>
             <Link href={`https://wa.me/542214205694?text=${encodeURIComponent(text)}`}>
-              <button className='h-10 px-5 font-semibold rounded-md bg-green-700 text-white'>Finalizar pedido</button>
+              <button className='h-10 w-full text-base font-semibold rounded-md bg-green-700 text-white'>Finalizar pedido</button>
             </Link>
           </div>
         </div>
