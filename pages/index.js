@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import PageLayout from '../components/PageLayout'
-import Products from '../components/Products'
 
 export default function Home() {
   return (
@@ -21,10 +20,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-
-        {/* <Products /> */}
-
-
 
         <div className='flex flex-col space-y-2 pt-4'>
           <h2 className='font-semibold text-xl'>Logros</h2>
