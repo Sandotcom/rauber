@@ -35,7 +35,7 @@ export default function Navbar(){
             <div className="flex cursor-pointer" onClick={handleCart}>
               <div className="flex flex-row">
                 <p className='hidden md:flex mr-1'>Carrito</p>
-                <p className='mr-1'>({cart.length})</p>
+                <p className='mr-1'>({cart.reduce((acc, item) => acc + item.quantity, 0)})</p>
                 {cart.length > 0 ? 
                   <ShoppingCartIconSolid className='w-5 h-5'/>      
                   : 

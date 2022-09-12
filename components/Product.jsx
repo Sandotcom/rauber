@@ -3,7 +3,7 @@ import { ADD_ITEM } from '../app/actions/actionTypes'
 import Link from 'next/link'
 import { useDispatch } from 'react-redux'
 
-const Product = ({product}) => {
+const Product = ({ product }) => {
   const { id, name, type, description, price, portada } = product
   const dispatch = useDispatch()
 
