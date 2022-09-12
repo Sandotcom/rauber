@@ -1,7 +1,9 @@
-import { ADD_ITEM, REMOVE_ITEM } from '../actions/actionTypes'
+import { ADD_ITEM, REMOVE_ITEM, SET_CART } from '../actions/actionTypes'
 
 export default function cart(state = [], action){
   switch(action.type){
+    case SET_CART:
+      return action.payload
     case ADD_ITEM:
       if(state.some((item) => item.id === action.payload.id)){
         return state.map((item) => item.id === action.payload.id

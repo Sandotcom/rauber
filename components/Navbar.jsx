@@ -1,16 +1,32 @@
-import { useState } from "react"
-import { useSelector } from "react-redux"
+import { useEffect, useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
 import { ShoppingCartIcon } from '@heroicons/react/24/outline'
 import { ShoppingCartIcon as ShoppingCartIconSolid, Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid'
 import { Transition } from '@headlessui/react'
 import Logo from "./Navbar/Logo"
 import MenuResponsive from './Navbar/MenuResponsive'
 import CartMenu from "./Navbar/CartMenu"
+import { SET_CART } from "../app/actions/actionTypes"
 
 export default function Navbar(){
   const cart = useSelector(state => state.cart)
+  const dispatch = useDispatch()
   const [toggleMenu, setToggleMenu] = useState(false)
   const [toggleCart, setToggleCart] = useState(false)
+  
+  useEffect(() => {
+    const cartLS = JSON.parse(localStorage.getItem('cart'))
+    if(cartLS){
+      dispatch({ type: SET_CART, payload: cartLS })
+    }
+  }, [])
+
+  useEffect(() => {
+    if(cart.length > 0){
+      localStorage.setItem('cart', JSON.stringify(cart))
+    }
+  }, [cart])
+
 
   const handleMenu = () => setToggleMenu((prevMenu) => !prevMenu)
 
