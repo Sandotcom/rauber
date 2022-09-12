@@ -11,7 +11,7 @@ export default function PageLayout({ children, title = 'Räuber Cerveza' }){
         <link rel="icon" href="/favicon.png" />
       </Head>
       <Navbar />
-      <main className='bg-neutral-100 scroll-smooth font-poppins w-full pt-20'>
+      <main className='bg-neutral-100 scroll-smooth font-poppins w-full pt-20 flex flex-col md:items-center'>
         {children}
       </main>
       {/* <Footer /> */}

@@ -5,7 +5,7 @@ import Product from './Product'
 const Products = () => {    
   return (
     <div className='flex flex-col gap-8'>
-      <div className='flex flex-col gap-4'>
+      <div className='flex flex-col md:grid md:grid-cols-2 gap-4'>
         {cervezas.map((product, i) => (         
             <Product key={i} product={product} />
         ))}

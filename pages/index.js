@@ -5,7 +5,7 @@ import Products from '../components/Products'
 export default function Home() {
   return (
     <PageLayout title='Räuber Cerveza Artesanal'>
-      <div className='flex flex-col p-4 space-y-2'>
+      <div className='flex flex-col p-4 space-y-2 md:max-w-screen-xl'>
         <div className='flex flex-col md:grid md:grid-cols-2'>
           <div className='md:px-20'>
             <img className='w-auto h-auto rounded-xl' src='/banner1.jpg' />
