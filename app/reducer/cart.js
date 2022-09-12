@@ -1,9 +1,24 @@
-import { ADD_ITEM } from '../actions/actionTypes'
+import { ADD_ITEM, REMOVE_ITEM } from '../actions/actionTypes'
 
 export default function cart(state = [], action){
   switch(action.type){
     case ADD_ITEM:
-      return state.concat(action.payload)
+      if(state.some((item) => item.id === action.payload.id)){
+        return state.map((item) => item.id === action.payload.id
+        ? {
+          ...item,
+          quantity: item.quantity + 1
+        } : item)
+      }
+
+      return state.concat({...action.payload, quantity: 1 })
+    case REMOVE_ITEM:
+      let itemToRemove = state.find((item) => item.id === action.payload)
+
+      return itemToRemove.quantity > 1
+        ? state.map((item) => item.id === action.payload 
+          ? {...item, quantity: item.quantity - 1} : item)
+        : state.filter((item) => item.id !== action.payload)
     default:
       return state
   }

@@ -22,22 +22,22 @@ const CartMenu = () => {
         <p className='font-normal'>Tu carrito está vacío</p>
 
         <Link href='/productos'>
-            <button className='h-10 px-5 font-semibold rounded-md bg-green-700 text-white'>Conocé nuestros productos</button>
-          </Link>
+          <button className='h-10 px-5 font-semibold rounded-md bg-green-700 text-white'>Conocé nuestros productos</button>
+        </Link>
       </div>
     )
   } else {
     return (
       <div className='flex flex-col justify-between'>
         {cart.map((item, i) => (
-          <CartItem key={i} id={item.id} name={item.name} type={item.type} price={item.price} image={item.portada} />
+          <CartItem key={i} item={item} />
           )
         )}
 
         <div className='flex flex-col justify-between mt-6 space-y-1'>
           <div className='flex flex-row justify-between text-lg font-semibold'>
             <p>Total</p>
-            <p>$ {cart.reduce((total, product) => total + product.price, 0)}</p>
+            <p>$ {cart.reduce((total, product) => total + product.price * product.quantity, 0)}</p>
           </div>
 
           <div className='flex flex-row justify-end pt-2'>
