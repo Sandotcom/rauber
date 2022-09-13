@@ -24,6 +24,8 @@ export default function Navbar(){
   useEffect(() => {
     if(cart.length > 0){
       localStorage.setItem('cart', JSON.stringify(cart))
+    } else {
+      localStorage.clear()
     }
   }, [cart])
 
