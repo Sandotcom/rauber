@@ -29,7 +29,6 @@ export default function Navbar(){
     }
   }, [cart])
 
-
   const handleMenu = () => setToggleMenu((prevMenu) => !prevMenu)
 
   const handleCart = () => setToggleCart((prevCart) => !prevCart)
@@ -38,16 +37,9 @@ export default function Navbar(){
     <nav className='w-full h-20 bg-neutral-900 fixed shadow-md z-30 font-poppins font-medium'>
 
       <div className='px-2 flex justify-between items-center w-full h-full'>
-        {/* <----- LEFT SIDE NAVBAR ----->      */}
-        
         <Logo />
-
-        {/* <----- END OF LEFT SIDE NAVBAR ----->      */}
-
         {/* RIGHT SIDE NAVBAR */}
-
         <div className='flex px-4 text-neutral-100'>
-
           {/* Cart div & icon */}
           {!toggleMenu && 
             <div className="flex cursor-pointer" onClick={handleCart}>
@@ -62,7 +54,6 @@ export default function Navbar(){
               </div>
             </div>
           }
-          
           {/* Close & Menu icons */}
           {toggleCart ? 
             <button className='md:hidden ml-4' onClick={handleCart}>
@@ -82,8 +73,7 @@ export default function Navbar(){
           </button>
           }
         </div>
-      </div>
-      
+      </div>    
   
       {/* Menu responsive */}
       <Transition 
@@ -96,9 +86,7 @@ export default function Navbar(){
         leaveTo='transform opacity-0 scale-75'
       >
         <div className='absolute w-full bg-neutral-200 font-medium px-8 py-8 shadow-md'>
-
           <MenuResponsive cart={cart} />     
-
         </div>
       </Transition>
 
@@ -114,12 +102,9 @@ export default function Navbar(){
         leaveTo='transform opacity-0 scale-75'
       >
         <div className='absolute w-full bg-neutral-200 font-semibold px-4 py-4 md:w-1/4 md:right-0 md:max-h-screen shadow-md'>
-
-            <CartMenu />
-
+          <CartMenu />
         </div>
       </Transition>
-
     </nav>
   )
 }

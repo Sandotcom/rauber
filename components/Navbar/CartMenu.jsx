@@ -41,7 +41,7 @@ const CartMenu = () => {
           </div>
 
           <div className='flex flex-row justify-end pt-2'>
-            <Link href={`https://wa.me/542214205694?text=${encodeURIComponent(text)}`}>
+            <Link href='/checkout'>
               <button className='h-10 w-full text-base font-semibold rounded-md bg-green-700 text-white'>Finalizar pedido</button>
             </Link>
           </div>
