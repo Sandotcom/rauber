@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import Image from 'next/image'
-
+import { addItem, removeItem } from '../../app/actions'
 
 const Items = ({ item }) => {
   const { id, name, type, price, portada, quantity } = item
@@ -16,14 +16,14 @@ const Items = ({ item }) => {
   }
 
   return (
-    <div className='flex flex-row justify-between pb-2 my-1 border-b border-stone-500'>
+    <div className='flex flex-row justify-between pb-2 mt-2 border-b font-semibold'>
       
       <div className='flex'>
         <Image className='rounded' src={portada} alt={name} width={65} height={65} />
-        <div className='flex flex-col justify-between px-4'>
+        <div className='flex flex-col justify-between px-3'>
           <p className={name.length > 12 ? 'text-sm' : undefined}>{name}</p>
           <div className='flex flex-row text-sm w-16 justify-between'>
-            <button className='px-2 rounded-l-md bg-stone-300' onClick={handleRemove}>-</button>
+            <button className='px-2 rounded-l-md bg-stone-200' onClick={handleRemove}>-</button>
             <p className='px-2'>{quantity}</p>
             <button className='px-2 rounded-r-md  bg-neutral-800 text-white' onClick={handleAdd}>+</button>
           </div>
