@@ -130,8 +130,8 @@ const Form = () => {
             onBlur={setErrorName}
             autoComplete="name"
             className={error.name ?
-              "mt-1 block w-full rounded-md border border-red-700 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-              : "mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+              "mt-1 block w-full rounded-md border border-red-700 py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+              : "mt-1 block w-full rounded-md border border-gray-300 py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
             }
           />
           {error.name && <p className="m-1 text-xs text-red-700">{error.name}</p>}
@@ -148,8 +148,8 @@ const Form = () => {
             onBlur={setErrorAddress}
             autoComplete="off"
             className={error.address ?
-              "mt-1 block w-full rounded-md border border-red-700 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-              : "mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+              "mt-1 block w-full rounded-md border border-red-700 py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+              : "mt-1 block w-full rounded-md border border-gray-300 py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
             }
           />
           {error.address && <p className="m-1 text-xs text-red-700">{error.address}</p>}  
@@ -166,8 +166,8 @@ const Form = () => {
             onBlur={setErrorAddNumber}
             autoComplete="off"
             className={error.addNumber ?
-              "mt-1 block w-full rounded-md border border-red-700 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-              : "mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+              "mt-1 block w-full rounded-md border border-red-700 py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+              : "mt-1 block w-full rounded-md border border-gray-300 py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
             }
           />
           {error.addNumber && <p className="m-1 text-xs text-red-700">{error.addNumber}</p>}
@@ -184,8 +184,8 @@ const Form = () => {
             onBlur={setErrorEntrecalles}
             autoComplete="off"
             className={error.entrecalles ?
-              "mt-1 block w-full rounded-md border border-red-700 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-              : "mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+              "mt-1 block w-full rounded-md border border-red-700 py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+              : "mt-1 block w-full rounded-md border border-gray-300 py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
             }
           />
           {error.entrecalles && <p className="m-1 text-xs text-red-700">{error.entrecalles}</p>}
@@ -200,7 +200,7 @@ const Form = () => {
             name="depto"
             onChange={handleInput}
             autoComplete="off"
-            className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+            className="mt-1 block w-full rounded-md border border-gray-300 py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
           />
         </div>
 
@@ -213,7 +213,7 @@ const Form = () => {
             name="paymentMethod"
             value={method}
             onChange={handleMethod}
-            className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+            className="mt-1 block w-full rounded-md border border-gray-300 py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
           >
             <option value="Efectivo">Efectivo</option>
             <option value="Transferencia">Transferencia</option>
@@ -221,7 +221,7 @@ const Form = () => {
           </select>
         </div>
       </div>
-      <div className="bg-gray-50 px-4 py-3 text-right sm:px-6">
+      <div className="px-4 py-3 text-right sm:px-6">
         {!input.name || !input.address || !input.addNumber || !input.entrecalles || cart.length === 0 ?
           <button
             type='button'
