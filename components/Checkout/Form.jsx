@@ -1,18 +1,13 @@
 import React, { useState, useMemo } from "react";
 import { useSelector } from "react-redux";
 import Link from "next/link";
+import { validateAddNumber, validateAddress, validateEntrecalles, validateInput, validateName } from "./validateForm";
 
 const Form = () => {
   const cart = useSelector((state) => state.cart);
   const [method, setMethod] = useState("Efectivo");
-  const [input, setInput] = useState({
-    name: "",
-    address: "",
-    addNumber: "",
-    entrecalles: "",
-    depto: "",
-    paymentMethod: method,
-  });
+  const [input, setInput] = useState({ name: "", address: "", addNumber: "", entrecalles: "", depto: "", paymentMethod: method });
+  const [error, setError] = useState({})
 
   const text = useMemo(
     () =>
@@ -59,6 +54,65 @@ const Form = () => {
     });
   };
 
+  const setErrorName = () => {
+    let hasError = validateName(input)
+
+    if(hasError !== undefined){
+      setError({
+        ...error, name: hasError
+      })
+    } else {
+      delete error.name
+      setError({...error})
+    }
+  }
+
+  const setErrorAddress = () => {
+    let hasError = validateAddress(input)
+
+    if(hasError !== undefined){
+      setError({
+        ...error, address: hasError
+      })
+    } else {
+      delete error.address
+      setError({...error})
+    }
+  }
+
+  const setErrorAddNumber = () => {
+    let hasError = validateAddNumber(input)
+
+    if(hasError !== undefined){
+      setError({
+        ...error, addNumber: hasError
+      })
+    } else {
+      delete error.addNumber
+      setError({...error})
+    }
+  }
+
+  const setErrorEntrecalles = () => {
+    let hasError = validateEntrecalles(input)
+
+    if(hasError !== undefined){
+      setError({
+        ...error, entrecalles: hasError
+      })
+    } else {
+      delete error.entrecalles
+      setError({...error})
+    }
+  }
+
+  const onClick = (e) => {
+    e.preventDefault()
+
+    let hasError = validateInput(input)
+    setError(hasError)
+  }
+
   return (
     <form>
       <div className="grid grid-cols-6 gap-6">
@@ -73,9 +127,14 @@ const Form = () => {
             type="text"
             name="name"
             onChange={handleInput}
+            onBlur={setErrorName}
             autoComplete="name"
-            className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+            className={error.name ?
+              "mt-1 block w-full rounded-md border border-red-700 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+              : "mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+            }
           />
+          {error.name && <p className="m-1 text-xs text-red-700">{error.name}</p>}
         </div>
 
         <div className="col-span-4 sm:col-span-3">
@@ -86,9 +145,14 @@ const Form = () => {
             type="text"
             name="address"
             onChange={handleInput}
+            onBlur={setErrorAddress}
             autoComplete="off"
-            className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+            className={error.address ?
+              "mt-1 block w-full rounded-md border border-red-700 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+              : "mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+            }
           />
+          {error.address && <p className="m-1 text-xs text-red-700">{error.address}</p>}  
         </div>
 
         <div className="col-span-2">
@@ -99,9 +163,14 @@ const Form = () => {
             type="text"
             name="addNumber"
             onChange={handleInput}
+            onBlur={setErrorAddNumber}
             autoComplete="off"
-            className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+            className={error.addNumber ?
+              "mt-1 block w-full rounded-md border border-red-700 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+              : "mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+            }
           />
+          {error.addNumber && <p className="m-1 text-xs text-red-700">{error.addNumber}</p>}
         </div>
 
         <div className="col-span-4 sm:col-span-3">
@@ -112,9 +181,14 @@ const Form = () => {
             type="text"
             name="entrecalles"
             onChange={handleInput}
+            onBlur={setErrorEntrecalles}
             autoComplete="off"
-            className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+            className={error.entrecalles ?
+              "mt-1 block w-full rounded-md border border-red-700 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+              : "mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+            }
           />
+          {error.entrecalles && <p className="m-1 text-xs text-red-700">{error.entrecalles}</p>}
         </div>
 
         <div className="col-span-2 sm:col-span-3">
@@ -148,22 +222,26 @@ const Form = () => {
         </div>
       </div>
       <div className="bg-gray-50 px-4 py-3 text-right sm:px-6">
-        <Link
-          href={`https://wa.me/542214205694?text=${encodeURIComponent(text)}`}
-        >
+        {!input.name || !input.address || !input.addNumber || !input.entrecalles || cart.length === 0 ?
           <button
-            type="submit"
-            disabled={
-              !input.name ||
-              !input.address ||
-              !input.addNumber ||
-              !input.entrecalles
-            }
+            type='button'
+            onClick={onClick}
+            className="inline-flex justify-center rounded-md border border-transparent bg-green-700 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-green-900 focus:outline-none focus:ring-2 focus:ring-green-900 focus:ring-offset-2"
+          >
+            Finalizar
+          </button>
+          :
+          <Link 
+          href={`https://wa.me/542214205694?text=${encodeURIComponent(text)}`}
+          >
+          <button
+            type='button'
             className="inline-flex justify-center rounded-md border border-transparent bg-green-700 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-green-900 focus:outline-none focus:ring-2 focus:ring-green-900 focus:ring-offset-2"
           >
             Finalizar
           </button>
         </Link>
+        }        
       </div>
     </form>
   );
