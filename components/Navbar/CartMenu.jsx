@@ -10,6 +10,8 @@ const CartMenu = ({ setToggleCart }) => {
   const cart = useSelector(state => state.cart)
   const router = useRouter()
 
+  const cartLength = cart.reduce((acc, item) => acc + item.quantity, 0)
+
   if(cart.length === 0){
     return (
       <div className='flex h-full flex-col overflow-y-scroll bg-neutral-100 shadow-xl font-poppins'>
@@ -40,7 +42,7 @@ const CartMenu = ({ setToggleCart }) => {
       <div className='flex h-full flex-col overflow-y-scroll bg-neutral-100 shadow-xl font-poppins'>
         <div className='flex-1 overflow-y-auto py-6 px-4 sm:px-6'>
           <div className='flex items-start justify-between'>
-            <Dialog.Title className='text-lg font-medium text-gray-900'>Tu carrito ({cart.reduce((acc, item) => acc + item.quantity, 0)})</Dialog.Title>
+            <Dialog.Title className='text-lg font-medium text-gray-900'>Tu carrito ({cartLength})</Dialog.Title>
             <div className='ml-3 flex h-7 items-center'>
               <button type='button' className='-m-2 p-2 text-gray-700 hover:text-gray-500' onClick={() => setToggleCart(false)}>
                 <span className='sr-only'>Cerrar</span>
@@ -65,6 +67,7 @@ const CartMenu = ({ setToggleCart }) => {
             <p>Total</p>
             <p>$ {cart.reduce((total, product) => total + product.price * product.quantity, 0)}</p>
           </div>
+          {cartLength < 6 && <p className='text-sm text-gray-600'>Compra mínima de seis (6) unidades</p>}
           <div className='mt-4'>
             <Link href='/checkout'>
               <button className='py-3 px-6 w-full font-medium rounded-md bg-black text-white'>Finalizar pedido</button>

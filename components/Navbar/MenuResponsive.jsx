@@ -22,10 +22,10 @@ const MenuResponsive = ({ setToggleMenu }) => {
         <div className='mt-8'>
           <div className='flow-root'>
             <ul className='text-center divide-y text-lg'>
-                <li className='py-4' onClick={() => {router.pathname === '/productos' ? setToggleMenu(false): router.push('/productos')}}>Productos</li>
-                <li className='py-4' onClick={() => {router.pathname === '/about' ? setToggleMenu(false): router.push('/about')}}>Acerca de nosotros</li>
-                <li className='py-4' onClick={() => {router.pathname === '/alquiler' ? setToggleMenu(false): router.push('/alquiler')}}>Alquiler de barriles</li>
-                <li className='py-4' onClick={() => {router.pathname === '/contacto' ? setToggleMenu(false): router.push('/contacto')}}>Contacto</li>
+                <li className='py-4' onClick={() => {router.pathname === '/productos' ? setToggleMenu(false) : router.push('/productos')}}>Productos</li>
+                <li className='py-4' onClick={() => {router.pathname === '/about' ? setToggleMenu(false) : router.push('/about')}}>Acerca de nosotros</li>
+                <li className='py-4' onClick={() => {router.pathname === '/alquiler' ? setToggleMenu(false) : router.push('/alquiler')}}>Alquiler de barriles</li>
+                <li className='py-4' onClick={() => {router.pathname === '/contacto' ? setToggleMenu(false) : router.push('/contacto')}}>Contacto</li>
             </ul>
           </div>
         </div>        

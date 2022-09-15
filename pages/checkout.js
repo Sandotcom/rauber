@@ -4,6 +4,7 @@ import Items from '../components/Checkout/Items'
 import Form from "../components/Checkout/Form";
 import { Disclosure } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
+import Link from "next/link";
 
 export default function Cart(){
   const cart = useSelector(state => state.cart)
@@ -25,13 +26,24 @@ export default function Cart(){
           {({open}) => (
             <>
               <Disclosure.Button className=' w-full flex justify-between'>
-                <h1 className="block font-medium text-gray-700">Ver carrito</h1>
+                <h1 className="block font-medium text-gray-700">Ver carrito ({cart.reduce((acc, item) => acc + item.quantity, 0)})</h1>
                 <ChevronDownIcon className={open ? 'w-6 rotate-180 transform' : 'w-6'} />
               </Disclosure.Button>
-              <Disclosure.Panel className='mt-4'>
-                {cart.map((item, i) => 
-                  <Items key={i} item={item} />
-                )}
+              <Disclosure.Panel className='mt-4 font-semibold'>
+                <div className="divide-y">
+                  {cart.map((item, i) => 
+                    <Items key={i} item={item} />
+                  )}
+                </div>
+
+                <Link href='/productos'>
+                  <button
+                    type="button"
+                    className="w-full py-2 font-medium text-end text-slate-900"
+                    >
+                      Agregar más productos
+                    </button>                
+                </Link>
               </Disclosure.Panel>              
             </>
           )}

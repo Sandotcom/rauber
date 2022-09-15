@@ -9,6 +9,8 @@ const Form = () => {
   const [input, setInput] = useState({ name: "", address: "", addNumber: "", entrecalles: "", depto: "", paymentMethod: method });
   const [error, setError] = useState({})
 
+  const cartLength = cart.reduce((acc, item) => acc + item.quantity, 0)
+
   const text = useMemo(
     () =>
       `Hola! Este es mi pedido:\n`
@@ -221,12 +223,13 @@ const Form = () => {
           </select>
         </div>
       </div>
-      <div className="px-4 py-3 text-right sm:px-6">
-        {!input.name || !input.address || !input.addNumber || !input.entrecalles || cart.length === 0 ?
+      <div className="py-4 text-center sm:px-6">
+        {cartLength < 6 && <p className="mb-2 text-sm text-red-700">Compra mínima de seis (6) unidades</p>}
+        {!input.name || !input.address || !input.addNumber || !input.entrecalles || cartLength < 6 ?
           <button
             type='button'
             onClick={onClick}
-            className="inline-flex justify-center rounded-md border border-transparent bg-green-700 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-green-900 focus:outline-none focus:ring-2 focus:ring-green-900 focus:ring-offset-2"
+            className="inline-flex w-full opacity-75 justify-center rounded-md border border-transparent bg-green-700 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-green-900 focus:outline-none focus:ring-2 focus:ring-green-900 focus:ring-offset-2"
           >
             Finalizar
           </button>
@@ -236,12 +239,12 @@ const Form = () => {
           >
           <button
             type='button'
-            className="inline-flex justify-center rounded-md border border-transparent bg-green-700 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-green-900 focus:outline-none focus:ring-2 focus:ring-green-900 focus:ring-offset-2"
+            className="inline-flex w-full justify-center rounded-md border border-transparent bg-green-700 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-green-900 focus:outline-none focus:ring-2 focus:ring-green-900 focus:ring-offset-2"
           >
             Finalizar
           </button>
         </Link>
-        }        
+        }  
       </div>
     </form>
   );
