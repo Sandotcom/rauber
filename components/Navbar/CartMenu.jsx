@@ -4,18 +4,35 @@ import Link from 'next/link'
 import CartItem from './CartItem'
 import { Dialog } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
+import { useRouter } from 'next/router'
 
 const CartMenu = ({ setToggleCart }) => {
   const cart = useSelector(state => state.cart)
+  const router = useRouter()
 
   if(cart.length === 0){
     return (
-      <div className='flex flex-col text-center gap-8'>
-        <p className='font-normal'>Tu carrito está vacío</p>
-
-        <Link href='/productos'>
-          <button className='h-10 px-5 font-semibold rounded-md bg-green-700 text-white'>Conocé nuestros productos</button>
-        </Link>
+      <div className='flex h-full flex-col overflow-y-scroll bg-neutral-100 shadow-xl font-poppins'>
+        <div className='flex-1 overflow-y-auto py-6 px-4 sm:px-6'>
+          <div className='flex items-start justify-between'>
+            <Dialog.Title className='text-lg font-medium text-gray-900'>Tu carrito está vacío</Dialog.Title>
+            <div className='ml-3 flex h-7 items-center'>
+              <button type='button' className='-m-2 p-2 text-gray-700 hover:text-gray-500' onClick={() => setToggleCart(false)}>
+                <span className='sr-only'>Cerrar</span>
+                <XMarkIcon className='h-6 w-6' aria-hidden='true' />
+              </button>
+            </div>
+          </div>
+          <div className='mt-8 sm:px6'>
+            {router.pathname === '/productos' ? (
+              <p className='py-3 px-6 w-full font-medium rounded-md bg-black text-white' onClick={() => setToggleCart(false)}>Conocé nuestros productos</p>
+            ) : (
+              <Link href='/productos'>
+                <p className='py-3 px-6 w-full font-medium rounded-md bg-black text-white'>Conocé nuestros productos</p>
+              </Link>
+            )}            
+          </div>
+        </div>
       </div>
     )
   } else {
@@ -23,7 +40,7 @@ const CartMenu = ({ setToggleCart }) => {
       <div className='flex h-full flex-col overflow-y-scroll bg-neutral-100 shadow-xl font-poppins'>
         <div className='flex-1 overflow-y-auto py-6 px-4 sm:px-6'>
           <div className='flex items-start justify-between'>
-            <Dialog.Title className='text-lg font-medium text-gray-900'>Tu carrito</Dialog.Title>
+            <Dialog.Title className='text-lg font-medium text-gray-900'>Tu carrito ({cart.reduce((acc, item) => acc + item.quantity, 0)})</Dialog.Title>
             <div className='ml-3 flex h-7 items-center'>
               <button type='button' className='-m-2 p-2 text-gray-700 hover:text-gray-500' onClick={() => setToggleCart(false)}>
                 <span className='sr-only'>Cerrar</span>

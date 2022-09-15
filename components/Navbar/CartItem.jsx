@@ -16,26 +16,6 @@ const CartItem = ({ item }) => {
   }
 
   return (
-    // <div className='flex flex-row justify-between pb-2 my-1 border-b border-stone-500'>
-      
-    //   <div className='flex'>
-    //     <Image className='rounded' src={portada} alt={name} width={65} height={65} />
-    //     <div className='flex flex-col justify-between px-4'>
-    //       <p className={name.length > 12 ? 'text-sm' : undefined}>{name}</p>
-    //       <div className='flex flex-row text-sm w-16 justify-between'>
-    //         <button className='px-2 rounded-l-md bg-stone-300' onClick={handleRemove}>-</button>
-    //         <p className='px-2'>{quantity}</p>
-    //         <button className='px-2 rounded-r-md  bg-neutral-800 text-white' onClick={handleAdd}>+</button>
-    //       </div>
-    //     </div>
-    //   </div>
-
-    //   <div className='flex flex-col justify-between'>
-    //     <p className='font-light text-sm leading-6'>{type}</p>
-    //     <p className='self-end text-lg leading-none text-slate-500'>$ {price * quantity}</p>
-    //   </div>
-
-    // </div>
     <div className='flex py-4'>
       <Image src={portada} alt={name} className='rounded' width={80} height={80} />
       
@@ -45,13 +25,12 @@ const CartItem = ({ item }) => {
           <p className=' text-slate-500'>${price * quantity}</p>
         </div>
         <p className='text-sm font-light text-gray-600'>{type}</p>
-        <div className='flex flex-1 items-end text-sm'>
+        <div className='flex flex-1 items-end text-sm mb-1'>
           <button className='px-2 rounded-l-md bg-stone-300' onClick={handleRemove}>-</button>
           <p className='px-2'>{quantity}</p>
           <button className='px-2 rounded-r-md  bg-neutral-800 text-white' onClick={handleAdd}>+</button>
         </div>
       </div>
-
     </div>
   )
 }
