@@ -18,7 +18,7 @@ const Form = () => {
           cart.reduce(
             (message, product) =>
               message.concat(
-                `* ${product.name} (${product.quantity}) - $${
+                `* (${product.quantity}) ${product.name} - $${
                   product.price * product.quantity
                 }\n`
               ),
