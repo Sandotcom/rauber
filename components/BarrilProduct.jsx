@@ -51,7 +51,7 @@ const BarrilProduct = ({ product }) => {
           <Link 
           href={`https://wa.me/542214205694?text=${encodeURIComponent(text)}`}
           >
-            <button className="h-10 px-6 font-semibold rounded-md bg-black text-white" type='button'>
+            <button className="h-10 px-6 font-semibold rounded-md bg-green-800 text-white" type='button'>
               Pedir por WhatsApp
             </button>
 
