@@ -2,6 +2,7 @@ import React, { useState, useMemo } from "react";
 import { useSelector } from "react-redux";
 import Link from "next/link";
 import { validateAddNumber, validateAddress, validateEntrecalles, validateInput, validateName } from "./validateForm";
+import parseCurrency from "../../constants/parseCurrency";
 
 const Form = () => {
   const cart = useSelector((state) => state.cart);
@@ -18,9 +19,7 @@ const Form = () => {
           cart.reduce(
             (message, product) =>
               message.concat(
-                `* (${product.quantity}) ${product.name} - $${
-                  product.price * product.quantity
-                }\n`
+                `* (${product.quantity}) ${product.name} - ${parseCurrency(product.price * product.quantity)}\n`
               ),
             ``
           )
@@ -33,10 +32,10 @@ const Form = () => {
           } \nMetodo de pago: ${input.paymentMethod}\n`
         )
         .concat(
-          `\nTotal: $${cart.reduce(
+          `\nTotal: ${parseCurrency(cart.reduce(
             (total, product) => total + product.price * product.quantity,
             0
-          )}`
+          ))}`
         ),
     [cart, input]
   );

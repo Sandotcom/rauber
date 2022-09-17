@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import Link from 'next/link'
 import CartItem from './CartItem'
+import parseCurrency from '../../constants/parseCurrency'
 import { Dialog } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import { useRouter } from 'next/router'
@@ -65,7 +66,7 @@ const CartMenu = ({ setToggleCart }) => {
         <div className='border-t border-gray-200 py-6 px-4 sm:px6'>
           <div className='flex justify-between text-lg font-semibold text-gray-900'>
             <p>Total</p>
-            <p>$ {cart.reduce((total, product) => total + product.price * product.quantity, 0)}</p>
+            <p>{parseCurrency(cart.reduce((total, product) => total + product.price * product.quantity, 0))}</p>
           </div>
           {cartLength < 6 && <p className='text-sm text-gray-600'>Compra mínima de seis (6) unidades</p>}
           <div className='mt-4'>

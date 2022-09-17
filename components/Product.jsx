@@ -2,6 +2,7 @@ import React from 'react'
 import { ADD_ITEM } from '../app/actions/actionTypes'
 import Link from 'next/link'
 import { useDispatch } from 'react-redux'
+import parseCurrency from '../constants/parseCurrency'
 
 const Product = ({ product }) => {
   const { id, name, type, description, price, portada } = product
@@ -24,7 +25,7 @@ const Product = ({ product }) => {
             <p className='flex-none text-sm font-medium text-slate-700 mt-2'>{type}</p>
             <p className='invisible md:visible'>{description}</p>
           </div>
-          <p className='text-lg font-semibold text-slate-500'>${price}</p>
+          <p className='text-lg font-semibold text-slate-500'>{parseCurrency(price)}</p>
         </div>
                 
         <div className="flex mt-3 text-sm">
