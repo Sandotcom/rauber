@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import { useDispatch } from 'react-redux'
 import { addItem, removeItem } from '../../app/actions'
+import parseCurrency from '../../constants/parseCurrency'
 
 const CartItem = ({ item }) => {
   const { id, name, type, price, portada, quantity } = item
@@ -22,7 +23,7 @@ const CartItem = ({ item }) => {
       <div className='ml-3 flex flex-1 flex-col'>
         <div className='flex justify-between text-base font-medium text-gray-800'>
           <h3 className={name.length > 12 ? 'text-sm' : undefined}>{name}</h3>
-          <p className=' text-slate-500'>${price * quantity}</p>
+          <p className=' text-slate-500'>{parseCurrency(price * quantity)}</p>
         </div>
         <p className='text-sm font-light text-gray-600'>{type}</p>
         <div className='flex flex-1 items-end text-sm mb-1'>
