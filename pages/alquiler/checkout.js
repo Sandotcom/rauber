@@ -4,10 +4,19 @@ import parseCurrency from "../../constants/parseCurrency";
 import Image from "next/image";
 
 export default function Checkout (){
-  const { id, name, type, types, portada } = useSelector(state => state.barril)
+  const barril = useSelector(state => state.barril)
 
-  return (
-    <PageLayout title="Räuber - Alquiler Chopera">
+  if(Object.keys(barril).length === 0){
+    return(
+      <PageLayout>
+        <h1>Por favor, selecciona un barril</h1>
+      </PageLayout>
+    )
+  } else {
+    const { id, name, type, types, portada } = barril
+
+    return (
+      <PageLayout title="Räuber - Alquiler Chopera">
       <div className="mt-5 px-4">
         <div className="mb-5 md:col-span-1">
           <div className="px-4 sm:px-0">
@@ -49,4 +58,5 @@ export default function Checkout (){
       </div>
     </PageLayout>
   )
+  }
 }
