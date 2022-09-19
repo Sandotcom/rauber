@@ -1,6 +1,6 @@
-import BarrilProduct from "../components/BarrilProduct";
-import PageLayout from "../components/PageLayout";
-import barriles from "../constants/barriles";
+import BarrilProduct from "../../components/BarrilProduct";
+import PageLayout from "../../components/PageLayout";
+import barriles from "../../constants/barriles";
 
 export default function Alquiler(){
   return (

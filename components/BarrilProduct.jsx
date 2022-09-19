@@ -3,10 +3,20 @@ import { useState } from 'react'
 import { RadioGroup } from '@headlessui/react'
 import Link from 'next/link'
 import parseCurrency from '../constants/parseCurrency'
+import { useRouter } from 'next/router'
+import { useDispatch } from 'react-redux'
+import { setBarril } from '../app/actions'
 
 const BarrilProduct = ({ product }) => {
   const { id, name, type, types, description, portada } = product
   const [selected, setSelected] = useState(types[0])
+  const dispatch = useDispatch()
+  const router = useRouter()
+
+  const handleClick = () => {
+    dispatch(setBarril({ ...product, types: selected }))
+    router.push('alquiler/checkout')
+  }
 
   const text = useMemo(() =>
   `Hola! Este es mi pedido:\n`
@@ -48,14 +58,14 @@ const BarrilProduct = ({ product }) => {
             </div>
 
           </RadioGroup>          
-          <Link 
+          {/* <Link 
           href={`https://wa.me/542214205694?text=${encodeURIComponent(text)}`}
-          >
-            <button className="h-10 px-6 font-semibold rounded-md bg-green-800 text-white" type='button'>
+          > */}
+            <button className="h-10 px-6 font-semibold rounded-md bg-green-800 text-white" type='button' onClick={handleClick}>
               Pedir por WhatsApp
             </button>
 
-          </Link>
+          {/* </Link> */}
         </div>
       </div>
     </div>

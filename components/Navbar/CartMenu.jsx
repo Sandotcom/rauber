@@ -1,17 +1,24 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import Link from 'next/link'
 import CartItem from './CartItem'
 import parseCurrency from '../../constants/parseCurrency'
 import { Dialog } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import { useRouter } from 'next/router'
+import { deleteCart } from '../../app/actions'
 
 const CartMenu = ({ setToggleCart }) => {
   const cart = useSelector(state => state.cart)
+  const dispatch = useDispatch()
   const router = useRouter()
 
   const cartLength = cart.reduce((acc, item) => acc + item.quantity, 0)
+
+  const handleDeleteCart = () => {
+    dispatch(deleteCart())
+    setToggleCart(false)
+  }
 
   if(cart.length === 0){
     return (
@@ -26,7 +33,7 @@ const CartMenu = ({ setToggleCart }) => {
               </button>
             </div>
           </div>
-          <div className='mt-8 sm:px6'>
+          <div className='mt-8 sm:px6 text-center'>
             {router.pathname === '/productos' ? (
               <p className='py-3 px-6 w-full font-medium rounded-md bg-black text-white' onClick={() => setToggleCart(false)}>Conocé nuestros productos</p>
             ) : (
@@ -58,12 +65,20 @@ const CartMenu = ({ setToggleCart }) => {
                 {cart.map((item, i) => (
                   <CartItem key={i} item={item} />
                 ))}
+                {router.pathname === '/productos' ? (
+                  <p className='text-sm font-normal text-right py-2 cursor-pointer' onClick={() => setToggleCart(false)}>+ Ver más productos</p>
+                ) : (
+                  <Link href='/productos'>
+                    <p className='text-sm font-normal text-right py-2 cursor-pointer'>+ Ver más productos</p>
+                  </Link>
+                )}                
               </div>
             </div>
           </div>
         </div>
 
-        <div className='border-t border-gray-200 py-6 px-4 sm:px6'>
+        <div className='border-t border-gray-200 pb-4 px-4 sm:px6'>
+          <p className='py-2 text-slate-800 font-light text-right text-sm' onClick={handleDeleteCart}>Vaciar carrito</p>
           <div className='flex justify-between text-lg font-semibold text-gray-900'>
             <p>Total</p>
             <p>{parseCurrency(cart.reduce((total, product) => total + product.price * product.quantity, 0))}</p>
