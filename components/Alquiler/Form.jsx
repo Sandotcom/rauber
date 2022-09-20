@@ -246,13 +246,14 @@ const Form = () => {
           :
           <Link 
           href={`https://wa.me/542214205694?text=${encodeURIComponent(text)}`}
+          passHref={true}
           >
-          <button
-            type='button'
+          <a
+            target='_blank'
             className="inline-flex w-full justify-center rounded-md border border-transparent bg-green-700 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-green-900 focus:outline-none focus:ring-2 focus:ring-green-900 focus:ring-offset-2"
           >
             Finalizar
-          </button>
+          </a>
         </Link>
         }  
       </div>
