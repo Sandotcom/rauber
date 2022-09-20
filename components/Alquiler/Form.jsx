@@ -142,7 +142,7 @@ const Form = () => {
           <label className="block text-sm font-medium text-gray-700">
             Hora
           </label>
-          <input type='text' name="time" onChange={handleInput}
+          <input type='text' name="time" onChange={handleInput} autoComplete='off'
             className={error.name ?
               "mt-1 block w-full rounded-md border border-red-700 py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
               : "mt-1 block w-full rounded-md border border-gray-300 py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
@@ -246,14 +246,13 @@ const Form = () => {
           :
           <Link 
           href={`https://wa.me/542214205694?text=${encodeURIComponent(text)}`}
-          passHref={true}
           >
-          <a
-            target='_blank'
+          <button
+            type='button'
             className="inline-flex w-full justify-center rounded-md border border-transparent bg-green-700 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-green-900 focus:outline-none focus:ring-2 focus:ring-green-900 focus:ring-offset-2"
           >
             Finalizar
-          </a>
+          </button>
         </Link>
         }  
       </div>
