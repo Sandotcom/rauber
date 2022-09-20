@@ -24,8 +24,8 @@ const MenuResponsive = ({ setToggleMenu }) => {
             <ul className='text-center divide-y text-lg'>
                 <li className='py-4' onClick={() => {router.pathname === '/productos' ? setToggleMenu(false) : router.push('/productos')}}>Nuestras latas</li>
                 <li className='py-4' onClick={() => {router.pathname === '/alquiler' ? setToggleMenu(false) : router.push('/alquiler')}}>Alquiler de choperas</li>
-                <li className='py-4' onClick={() => {router.pathname === '/about' ? setToggleMenu(false) : router.push('/about')}}>Acerca de nosotros</li>
-                <li className='py-4' onClick={() => {router.pathname === '/contacto' ? setToggleMenu(false) : router.push('/contacto')}}>Contacto</li>
+                {/* <li className='py-4' onClick={() => {router.pathname === '/about' ? setToggleMenu(false) : router.push('/about')}}>Acerca de nosotros</li>
+                <li className='py-4' onClick={() => {router.pathname === '/contacto' ? setToggleMenu(false) : router.push('/contacto')}}>Contacto</li> */}
             </ul>
           </div>
         </div>        
