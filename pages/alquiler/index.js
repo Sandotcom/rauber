@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function Alquiler(){
   return (
-    <PageLayout title="Räuber - Alquiler de barril" >
+    <PageLayout title="Räuber - Alquiler de chopera" >
       <div className="flex flex-col p-4 space-y-2 md:max-w-screen-xl">
         <h2 className='font-semibold text-xl py-2'>Nuestros barriles</h2>
         <Disclosure as="div" className='p-4 border rounded-md'>

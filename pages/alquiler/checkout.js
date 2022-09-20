@@ -17,7 +17,7 @@ export default function Checkout (){
     const { id, name, type, types, portada } = barril
 
     return (
-      <PageLayout title="Räuber - Alquiler Chopera">
+      <PageLayout title="Räuber - Alquiler de chopera">
       <div className="mt-5 px-4">
         <div className="mb-5 md:col-span-1">
           <div className="px-4 sm:px-0">
