@@ -6,10 +6,11 @@ import { Dialog, Transition } from '@headlessui/react'
 import Logo from "./Navbar/Logo"
 import MenuResponsive from './Navbar/MenuResponsive'
 import CartMenu from "./Navbar/CartMenu"
-import { SET_CART } from "../app/actions/actionTypes"
+import { SET_BARRIL, SET_CART } from "../app/actions/actionTypes"
 
 export default function Navbar(){
   const cart = useSelector(state => state.cart)
+  const barril = useSelector(state => state.barril)
   const dispatch = useDispatch()
   const [toggleMenu, setToggleMenu] = useState(false)
   const [toggleCart, setToggleCart] = useState(false)
@@ -25,9 +26,24 @@ export default function Navbar(){
     if(cart.length > 0){
       localStorage.setItem('cart', JSON.stringify(cart))
     } else {
-      localStorage.clear()
+      localStorage.removeItem('cart')
     }
   }, [cart])
+
+  useEffect(() => {
+    const barrilLS = JSON.parse(localStorage.getItem('barril'))
+    if(barrilLS){
+      dispatch({ type: SET_BARRIL, payload: barrilLS })
+    }
+  }, [])
+
+  useEffect(() => {
+    if(Object.keys(barril).length > 0){
+      localStorage.setItem('barril', JSON.stringify(barril))
+    } else {
+      localStorage.removeItem('barril')
+    }
+  }, [barril])
 
   const handleMenu = () => setToggleMenu((prevMenu) => !prevMenu)
 

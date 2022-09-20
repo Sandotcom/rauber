@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import PageLayout from "../../components/PageLayout";
 import parseCurrency from "../../constants/parseCurrency";
 import Image from "next/image";
+import Form from "../../components/Alquiler/Form";
 
 export default function Checkout (){
   const barril = useSelector(state => state.barril)
@@ -53,7 +54,7 @@ export default function Checkout (){
         </div>
 
         <div className="bg-white border rounded-md rounded-t-none mb-4 px-4 py-5 sm:p-6">
-          {/* <Form /> */}
+          <Form />
         </div>
       </div>
     </PageLayout>

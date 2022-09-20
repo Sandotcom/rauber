@@ -13,13 +13,13 @@ const Logo = () => {
 
       <ul className="hidden md:flex ml-4 space-x-5">
         <Link href='/productos'>
-          <li className='cursor-pointer hover:text-neutral-400'>Productos</li>
+          <li className='cursor-pointer hover:text-neutral-400'>Nuestras Latas</li>
         </Link>
-        <Link href='/about'>
-          <li className='cursor-pointer hover:text-neutral-400'>Acerca de</li>
+        <Link href='/alquiler'>
+          <li className='cursor-pointer hover:text-neutral-400'>Alquiler de choperas</li>
         </Link>
         <Link href='/'>
-          <li className='cursor-pointer hover:text-neutral-400'>Vendé Räuber</li>
+          <li className='cursor-pointer hover:text-neutral-400'>Contacto</li>
         </Link>
       </ul>
     </div>
