@@ -57,15 +57,10 @@ const BarrilProduct = ({ product }) => {
               ))}
             </div>
 
-          </RadioGroup>          
-          {/* <Link 
-          href={`https://wa.me/542214205694?text=${encodeURIComponent(text)}`}
-          > */}
+          </RadioGroup>
             <button className="h-10 px-6 font-semibold rounded-md bg-green-800 text-white" type='button' onClick={handleClick}>
               Pedir por WhatsApp
             </button>
-
-          {/* </Link> */}
         </div>
       </div>
     </div>

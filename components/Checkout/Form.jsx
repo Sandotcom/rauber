@@ -25,11 +25,11 @@ const Form = () => {
           )
         )
         .concat(
-          `\nNombre: ${input.name}\nDireccion: ${input.address} N° ${
+          `\nNombre: ${input.name}\nDirección: ${input.address} N° ${
             input.addNumber
           } ${input.depto && `\nPiso/Depto: ${input.depto}`} ${
             input.entrecalles && `\nEntre calles: ${input.entrecalles}`
-          } \nMetodo de pago: ${input.paymentMethod}\n`
+          } \nMétodo de pago: ${input.paymentMethod}\n`
         )
         .concat(
           `\nTotal: ${parseCurrency(cart.reduce(
@@ -158,7 +158,7 @@ const Form = () => {
 
         <div className="col-span-2">
           <label className="block text-sm font-medium text-gray-700">
-            Numero
+            Número
           </label>
           <input
             type="text"
