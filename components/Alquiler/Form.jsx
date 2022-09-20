@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from "react";
 import { useSelector } from "react-redux";
 import Link from "next/link";
-import { validateAddNumber, validateAddress, validateEntrecalles, validateInput, validateName } from "./validateForm";
+import { validateAddNumber, validateAddress, validateDate, validateEntrecalles, validateInput, validateName } from "./validateForm";
 import parseCurrency from "../../constants/parseCurrency";
 
 const Form = () => {
@@ -15,11 +15,11 @@ const Form = () => {
       `Hola! Este es mi pedido:\n`
         .concat(` * Barril ${barril.name} x ${barril.types.cantidad} litros - ${parseCurrency(barril.types.price)}\n * Servicio de flete - ${parseCurrency(1800)}\n`)
         .concat(
-          `\nNombre: ${input.name}\nDireccion: ${input.address} N° ${
+          `\nNombre: ${input.name}\nDirección: ${input.address} N° ${
             input.addNumber
           } ${input.depto && `\nPiso/Depto: ${input.depto}`} ${
             input.entrecalles && `\nEntre calles: ${input.entrecalles}`
-          } \nMetodo de pago: ${input.paymentMethod}\n`
+          } \nMétodo de pago: ${input.paymentMethod}\n`
         )
         .concat(`\nFecha de alquiler: ${input.date}\nHora aprox: ${input.time}hs`)
         .concat(
@@ -52,6 +52,19 @@ const Form = () => {
       })
     } else {
       delete error.name
+      setError({...error})
+    }
+  }
+
+  const setErrorDate = () => {
+    let hasError = validateDate(input)
+
+    if(hasError !== undefined){
+      setError({
+        ...error, date: hasError
+      })
+    } else {
+      delete error.date
       setError({...error})
     }
   }
@@ -130,23 +143,21 @@ const Form = () => {
           <label className="block text-sm font-medium text-gray-700">
             Fecha de alquiler
           </label>
-          <input type='date' name="date" onChange={handleInput}
-            className={error.name ?
+          <input type='date' name="date" onChange={handleInput} onBlur={setErrorDate}
+            className={error.date ?
               "mt-1 block w-full rounded-md border border-red-700 py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
               : "mt-1 block w-full rounded-md border border-gray-300 py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
             }
           />
+          {error.date && <p className="m-1 text-xs text-red-700">{error.date}</p>}
         </div>
 
         <div className="col-span-2">
           <label className="block text-sm font-medium text-gray-700">
             Hora
           </label>
-          <input type='text' name="time" onChange={handleInput}
-            className={error.name ?
-              "mt-1 block w-full rounded-md border border-red-700 py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-              : "mt-1 block w-full rounded-md border border-gray-300 py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-            }
+          <input type='text' name="time" onChange={handleInput} autoComplete='off'
+            className="mt-1 block w-full rounded-md border border-gray-300 py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
           />
         </div>
 
@@ -170,7 +181,7 @@ const Form = () => {
 
         <div className="col-span-2">
           <label className="block text-sm font-medium text-gray-700">
-            Numero
+            Número
           </label>
           <input
             type="text"
@@ -235,7 +246,7 @@ const Form = () => {
         </div>
       </div>
       <div className="py-4 text-center sm:px-6">
-        {!input.name || !input.address || !input.addNumber || !input.entrecalles ?
+        {!input.name || !input.date || !input.address || !input.addNumber || !input.entrecalles ?
           <button
             type='button'
             onClick={onClick}

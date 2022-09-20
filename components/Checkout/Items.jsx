@@ -1,6 +1,5 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import Image from 'next/image'
 import { addItem, removeItem } from '../../app/actions'
 import parseCurrency from '../../constants/parseCurrency'
 
@@ -19,7 +18,9 @@ const Items = ({ item }) => {
   return (
     <div className='flex py-2'>
       
-      <Image src={portada} alt={name} className='rounded' width={80} height={80} />
+      <div className='relative'>
+        <img src={portada} alt={name} className='w-20 h-20 md:w-48 md:h-48 object-cover rounded-md' />
+      </div>
       
       <div className='ml-3 flex flex-1 flex-col'>
         <div className='flex justify-between text-base font-medium text-gray-800'>

@@ -33,7 +33,9 @@ export default function Checkout (){
         <div className='p-4 flex flex-col border rounded-md rounded-b-none border-b-0 bg-white'>
           <h1 className="block font-medium text-gray-700">Detalle</h1>
           <div className='flex py-2'>     
-            <Image src={portada} alt={name} className='rounded' width={80} height={80} />
+            <div className='relative'>
+              <img src={portada} alt={name} className='w-20 h-20 md:w-48 md:h-48 object-cover rounded-md' />
+            </div>
       
             <div className='ml-3 flex flex-1 flex-col'>
               <div className='flex justify-between text-base font-medium text-gray-800'>
@@ -43,9 +45,9 @@ export default function Checkout (){
               <p className='text-sm font-light text-gray-600'>{type} x {types.cantidad} litros</p>
             </div>
           </div>
-          <div className='flex text-sm py-2 justify-between text-gray-600'>
-            <p className="text-sm">Servicio de flete</p>
-            <p>{parseCurrency(1800)}</p>
+          <div className='flex text-sm font-medium text-gray-800 py-2 justify-between'>
+            <p>Servicio de flete</p>
+            <p className="text-slate-500">{parseCurrency(1800)}</p>
           </div>
           <div className='flex justify-between border-t pt-2 text-lg font-semibold text-gray-900'>
             <p>Total</p>

@@ -29,7 +29,7 @@ export default function Cerveza({ estilo }){
           </div>
         </div>
 
-        <div className="w-full items-center px-4">
+        <div className="w-full items-center px-4 pb-6">
           <button className="h-10 w-full font-semibold rounded-md bg-black text-white" type='button' onClick={(e) => onClick(e, estilo)}>
             Agregar al carrito
           </button>
