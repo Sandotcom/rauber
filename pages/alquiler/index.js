@@ -5,7 +5,7 @@ import { Disclosure } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
-export default function Alquiler(){
+export default function Alquiler({ data }){
   return (
     <PageLayout title="Räuber - Alquiler de chopera" >
       <div className="flex flex-col p-4 space-y-2 md:max-w-screen-xl">
@@ -27,8 +27,7 @@ export default function Alquiler(){
                   <div>
                     <p className="p-2">Para más información: {<Link href={`https://wa.me/542214775678`} passHref={true}>
                       <a target='_blank' rel="noopener noreferrer"><u>Comunicate por WhatsApp</u></a>
-                    </Link>}</p>
-                    
+                    </Link>}</p>                    
                   </div>
                 </div>
               </Disclosure.Panel>              
@@ -37,7 +36,7 @@ export default function Alquiler(){
         </Disclosure>
         <div className='flex flex-col gap-8'>
           <div className='flex flex-col md:grid md:grid-cols-2 gap-4'>
-            {barriles.map((product, i) => (
+            {data.map((product, i) => (
               <BarrilProduct key={i} product={product} />
             ))}
           </div>
@@ -45,4 +44,12 @@ export default function Alquiler(){
       </div>
     </PageLayout>
   )
+}
+
+export async function getStaticProps(){
+  const data = barriles
+
+  return {
+    props: { data }
+  }
 }

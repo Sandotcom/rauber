@@ -1,7 +1,5 @@
-import React, { useMemo } from 'react'
-import { useState } from 'react'
+import React, { useState }  from 'react'
 import { RadioGroup } from '@headlessui/react'
-import Link from 'next/link'
 import parseCurrency from '../constants/parseCurrency'
 import { useRouter } from 'next/router'
 import { useDispatch } from 'react-redux'
@@ -17,13 +15,6 @@ const BarrilProduct = ({ product }) => {
     dispatch(setBarril({ ...product, types: selected }))
     router.push('alquiler/checkout')
   }
-
-  const text = useMemo(() =>
-  `Hola! Este es mi pedido:\n`
-    .concat(`* Barril ${name} x ${selected.cantidad} litros - ${parseCurrency(selected.price)}\n`)
-    .concat(
-      `\nTotal: ${parseCurrency(selected.price)}`
-    ), [selected])
   
   return (
     <div className='flex font-poppins rounded-md shadow bg-gray-200'>

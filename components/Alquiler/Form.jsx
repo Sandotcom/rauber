@@ -21,7 +21,7 @@ const Form = () => {
             input.entrecalles && `\nEntre calles: ${input.entrecalles}`
           } \nMétodo de pago: ${input.paymentMethod}\n`
         )
-        .concat(`\nFecha de alquiler: ${input.date}\nHora aprox: ${input.time}hs`)
+        .concat(`\nFecha de alquiler: ${input.date}\nHora aprox: ${input.time}\n`)
         .concat(
           `\nTotal: ${parseCurrency(barril.types.price + 1800)}`
         ),
