@@ -13,7 +13,7 @@ export default function Home() {
         <div className='flex flex-col' >
           <div className='absolute overflow-hidden z-0'>
             <Image src={bgImage} alt='Räuber Cerveza Artesanal' className='h-[550px] object-cover md:hidden' priority />
-            <Image src={bgmdImage} alt='Räuber Cerveza Artesanal' className='hidden object-cover md:block h-[550px] md:h-[700px] md:max-w-screen-xl' priority />
+            <Image src={bgmdImage} alt='Räuber Cerveza Artesanal' className='hidden object-cover md:block h-[550px] md:h-[700px] md:max-w-screen-xl' />
           </div>
           <div className='flex flex-col md:justify-between md:text-center h-[550px] md:h-[700px] bg-gradient-to-t from-black z-[2]'>
             <div className='mb-40 mt-32 self-center w-72'>
