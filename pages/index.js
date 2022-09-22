@@ -1,21 +1,25 @@
 import Link from 'next/link'
 import PageLayout from '../components/PageLayout'
+import Image from 'next/future/image'
+import logo from '../public/logo.png'
+import bgImage from '../public/hopVaso.jpg'
+import bgmdImage from '../public/hops.jpg'
 
 export default function Home() {
-  const backgroundImageStyle = {
-    backgroundImage: `url('hopVaso.jpg')`,
-    backgroundSize: "cover"
-  }
 
   return (
     <PageLayout title='Räuber Cerveza Artesanal'>
       <div className='flex flex-col space-y-2 md:max-w-screen-xl'>
-        <div className='flex flex-col ' style={backgroundImageStyle}>
-          <div className='flex flex-col bg-gradient-to-t from-black'>
+        <div className='flex flex-col' >
+          <div className='absolute overflow-hidden z-0'>
+            <Image src={bgImage} alt='Räuber Cerveza Artesanal' className='h-[550px] object-cover md:hidden' priority />
+            <Image src={bgmdImage} alt='Räuber Cerveza Artesanal' className='hidden object-cover md:block h-[550px] md:h-[700px] md:max-w-screen-xl' priority />
+          </div>
+          <div className='flex flex-col md:justify-between md:text-center h-[550px] md:h-[700px] bg-gradient-to-t from-black z-[2]'>
             <div className='mb-40 mt-32 self-center w-72'>
-              <img src='/logo.png' />
+              <Image src={logo} alt='Räuber Cerveza Artesanal' />
             </div>
-            <div className='flex flex-col p-6 space-y-2 text-white'>
+            <div className='flex flex-col p-6 space-y-2 md:pb-16 text-white'>
               <h2 className='font-semibold text-xl'>¿Quiénes somos?</h2>
               <p className='font-zilla'>Un equipo de amigos que lo da todo por la cerveza artesanal platense</p>
 
