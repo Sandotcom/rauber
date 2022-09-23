@@ -17,7 +17,7 @@ export default function Footer(){
             <a href="https://www.instagram.com/rauber.cerveza/" target='_blank' rel="noopener noreferrer">
               <Image src={igLogo} className='h-6 w-fit shadow-lg' />
             </a>
-            <a href='https://mail.google.com/mail/u/0/?fs=1&to=rauber.contacto@gmail.com&tf=cm' target='_blank' rel="noopener noreferrer">
+            <a href='mailto:rauber.contacto@gmail.com' target='_blank' rel="noopener noreferrer">
               <Image src={gmailLogo} className='h-6 w-fit shadow-lg' />
             </a>
             <a href="https://wa.me/542214775678" target='_blank' rel="noopener noreferrer">
@@ -33,7 +33,7 @@ export default function Footer(){
             <a href="https://www.linkedin.com/in/santiagotrabucco/" target='_blank' rel="noopener noreferrer">
               <Image src={linkInLogo} className='shadow-lg h-5 w-fit' />
             </a>
-            <a href='https://mail.google.com/mail/u/0/?fs=1&to=santiagotrabucco@gmail.com&tf=cm' target='_blank' rel="noopener noreferrer">
+            <a href='mailto:santiagotrabucco@gmail.com' target='_blank' rel="noopener noreferrer">
               <Image src={gmailLogo} className='h-5 w-fit shadow-lg' />
             </a>
 
