@@ -14,7 +14,7 @@ export default function PageLayout({ children, title = 'Räuber Cerveza' }){
       <main className='bg-neutral-100 scroll-smooth font-poppins w-full min-h-screen pt-20 flex flex-col md:items-center'>
         {children}
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   )
 }

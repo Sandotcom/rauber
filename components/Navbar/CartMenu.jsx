@@ -4,7 +4,7 @@ import Link from 'next/link'
 import CartItem from './CartItem'
 import parseCurrency from '../../constants/parseCurrency'
 import { Dialog } from '@headlessui/react'
-import { XMarkIcon } from '@heroicons/react/24/outline'
+import { XMarkIcon, TrashIcon } from '@heroicons/react/24/outline'
 import { useRouter } from 'next/router'
 import { deleteCart } from '../../app/actions'
 
@@ -77,8 +77,11 @@ const CartMenu = ({ setToggleCart }) => {
           </div>
         </div>
 
-        <div className='border-t border-gray-200 pb-4 px-4 sm:px6'>
-          <p className='py-2 text-slate-800 font-light text-right text-sm' onClick={handleDeleteCart}>Vaciar carrito</p>
+        <div className='border-t flex flex-col border-gray-200 pb-4 px-4 sm:px6'>
+          <div className='flex self-end py-2 space-x-1 cursor-pointer' onClick={handleDeleteCart}>
+            <TrashIcon className='h-5' />
+            <p className='text-slate-800 font-medium text-sm'>Vaciar carrito</p>
+          </div>
           <div className='flex justify-between text-lg font-semibold text-gray-900'>
             <p>Total</p>
             <p>{parseCurrency(cart.reduce((total, product) => total + product.price * product.quantity, 0))}</p>
