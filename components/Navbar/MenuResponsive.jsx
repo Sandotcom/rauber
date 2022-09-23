@@ -33,13 +33,13 @@ const MenuResponsive = ({ setToggleMenu }) => {
             </ul>
           </div>
           <div className='flex self-center gap-10'>
-            <a href="https://www.instagram.com/rauber.cerveza/" target='_blank'>
+            <a href="https://www.instagram.com/rauber.cerveza/" target='_blank' rel="noopener noreferrer" >
               <Image src={igLogo} />       
             </a>
-            <a href='https://mail.google.com/mail/u/0/?fs=1&to=rauber.contacto@gmail.com&tf=cm' target='_blank'>
+            <a href='https://mail.google.com/mail/u/0/?fs=1&to=rauber.contacto@gmail.com&tf=cm' target='_blank' rel="noopener noreferrer">
               <Image src={gmailLogo} />
             </a>
-            <a href="https://wa.me/542214775678" target='_blank'>
+            <a href="https://wa.me/542214775678" target='_blank' rel="noopener noreferrer">
               <Image src={wspLogo} />
             </a>
           </div>
