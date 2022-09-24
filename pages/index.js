@@ -4,12 +4,13 @@ import Image from 'next/future/image'
 import logo from '../public/logo.png'
 import bgImage from '../public/hopVaso.jpg'
 import bgmdImage from '../public/hops.jpg'
+import bgLatas from '../public/banner1.jpg'
+import bgBarrels from '../public/barrels2.jpg'
 
 export default function Home() {
-
   return (
     <PageLayout title='Räuber Cerveza Artesanal'>
-      <div className='flex flex-col space-y-2 md:max-w-screen-xl'>
+      <div className='flex flex-col space-y-8 md:max-w-screen-xl'>
         <div className='flex flex-col' >
           <div className='absolute overflow-hidden z-0'>
             <Image src={bgImage} alt='Räuber Cerveza Artesanal' className='h-[550px] object-cover md:hidden' priority />
@@ -24,12 +25,34 @@ export default function Home() {
               <p className='font-zilla'>Un equipo de amigos que lo da todo por la cerveza artesanal platense</p>
 
               <div className='pt-2'>
-                <Link href='/about'>
+                <Link href='#'>
                   <button className='h-10 px-6 font-semibold rounded-md bg-black text-white'>Más información</button>
                 </Link>  
               </div>
             </div>
           </div>
+        </div>
+
+        <h2 className='px-4 font-semibold text-2xl text-slate-900'> Nuestros productos</h2>
+        <div className='flex flex-col md:flex-row md:gap-10 md:space-y-0 justify-between items-center p-4 space-y-10'>
+          <Link href='/productos'>
+            <div className='flex-1 shadow-lg  rounded-md overflow-hidden relative cursor-pointer'>
+              <Image src={bgLatas} alt='Tienda Online' className='w-full' />
+              <div className='flex flex-col p-8 text-white bg-gradient-to-bl from-black absolute w-full h-full left-0 top-0 items-center justify-between '>
+                <h2 className='font-medium text-2xl '>Latas</h2>
+                <button className='h-10 px-6 font-semibold rounded-md bg-black  border border-black'>Ver más</button>
+              </div>
+            </div>
+          </Link>
+          <Link href='/alquiler'>
+            <div className='flex-1 shadow-lg rounded-md overflow-hidden relative  cursor-pointer'>
+              <Image src={bgBarrels} alt='Tienda Online' className='w-full' />
+              <div className='flex flex-col p-8 text-white bg-gradient-to-bl from-black absolute w-full h-full left-0 top-0 items-center justify-between '>
+                <h2 className='font-medium text-2xl '>Alquiler de choperas</h2>
+                <button className='h-10 px-6 font-semibold rounded-md bg-black  border border-black'>Ver más</button>
+              </div>
+            </div>
+          </Link>
         </div>
 
         <div className='flex flex-col p-4 space-y-2 pt-4'>
