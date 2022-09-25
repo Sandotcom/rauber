@@ -54,12 +54,22 @@ export default function Home() {
             </div>
           </Link>
         </div>
+        
+        <div className=' w-3/4 h-[2px] self-center rounded-lg bg-slate-300'></div>
 
-        <div className='flex flex-col p-4 space-y-2 pt-4'>
+        <div className='flex flex-col p-4 space-y-2 '>
           <h2 className='font-semibold text-xl'>Logros</h2>
-          <p className='font-montserrat'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vel vehicula nisi. Quisque congue ut nunc vel fermentum. Donec malesuada pharetra suscipit. 
-            Nulla enim tortor, accumsan a tincidunt congue, viverra in ante. Suspendisse non eleifend mi. Aenean eu dui pharetra dui vestibulum vulputate.
+          <p className='font-montserrat text-base'>
+            Oro en Session IPA - Copa 3 ciudades 2020<br/>
+            Oro en American IPA - Copa 3 Ciudades 2021<br/>
+            Mención Especial en Red Ale - Copa 3 Ciudades 2021<br/>
+            Oro en Catharina Sour - Copa Argentina de Cervezas 2021<br/>
+            Plata en Catharina Sour - Copa Platense de Cervezas 2021<br/>
+            Plata en Golden Ale - Copa Platense de Cervezas 2021<br/>
+            Bronce en English Ipa - Copa Platense de Cervezas 2021<br/>
+            Oro en Session IPA - Copa Platense de Cervezas 2021<br/>
+            Oro en Golden - Copa 3 Ciudades 2022<br/>
+            Bronce en American IPA - Copa 3 Ciudades 2022<br/>
           </p>
         </div>
       </div>
