@@ -5,7 +5,7 @@ import logo from '../public/logo.png'
 import bgImage from '../public/hopVaso.jpg'
 import bgmdImage from '../public/hops.jpg'
 import bgLatas from '../public/banner1.jpg'
-import bgBarrels from '../public/barrels2.jpg'
+import bgBarrels from '../public/chopper.jpeg'
 
 export default function Home() {
   return (
@@ -45,9 +45,9 @@ export default function Home() {
             </div>
           </Link>
           <Link href='/alquiler'>
-            <div className='flex-1 shadow-lg rounded-md overflow-hidden relative  cursor-pointer'>
+            <div className='flex-1 shadow-lg rounded-md  overflow-hidden relative cursor-pointer'>
               <Image src={bgBarrels} alt='Tienda Online' className='w-full' />
-              <div className='flex flex-col p-8 text-white bg-gradient-to-bl from-black absolute w-full h-full left-0 top-0 items-center justify-between '>
+              <div className='flex flex-col py-14 text-white bg-gradient-to-bl from-black absolute w-full h-full left-0 top-0 items-center justify-between '>
                 <h2 className='font-medium text-2xl '>Alquiler de choperas</h2>
                 <button className='h-10 px-6 font-semibold rounded-md bg-black  border border-black'>Ver más</button>
               </div>
