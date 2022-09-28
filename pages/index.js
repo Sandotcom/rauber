@@ -36,7 +36,7 @@ export default function Home() {
         <h2 className='px-4 font-semibold text-2xl text-center text-slate-900'> Nuestros productos</h2>
         <div className='flex flex-col md:flex-row md:gap-10 md:space-y-0 justify-between items-center p-4 space-y-10'>
           <Link href='/productos'>
-            <div className='flex-1 shadow-lg  rounded-md overflow-hidden relative cursor-pointer'>
+            <div className='flex-1 shadow-md rounded-md overflow-hidden relative cursor-pointer'>
               <Image src={bgLatas} alt='Tienda Online' className='w-full' />
               <div className='flex flex-col p-8 text-white bg-gradient-to-bl from-black absolute w-full h-full left-0 top-0 items-center justify-between '>
                 <h2 className='font-medium text-2xl '>Latas</h2>
@@ -45,7 +45,7 @@ export default function Home() {
             </div>
           </Link>
           <Link href='/alquiler'>
-            <div className='flex-1 shadow-lg rounded-md  overflow-hidden relative cursor-pointer'>
+            <div className='flex-1 shadow-md rounded-md  overflow-hidden relative cursor-pointer'>
               <Image src={bgBarrels} alt='Tienda Online' className='w-full' />
               <div className='flex flex-col py-14 text-white bg-gradient-to-bl from-black absolute w-full h-full left-0 top-0 items-center justify-between '>
                 <h2 className='font-medium text-2xl '>Alquiler de choperas</h2>
