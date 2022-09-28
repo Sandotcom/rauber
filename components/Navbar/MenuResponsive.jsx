@@ -25,11 +25,12 @@ const MenuResponsive = ({ setToggleMenu }) => {
 
         <div className='flex flex-col justify-between mt-8 h-5/6'>
           <div className=''>
-            <ul className='text-center divide-y text-lg'>
+            <ul className='text-center font-roboto divide-y text-lg'>
+                <li className='py-4' onClick={() => {router.pathname === '/' ? setToggleMenu(false) : router.push('/')}}>Inicio</li>
                 <li className='py-4' onClick={() => {router.pathname === '/productos' ? setToggleMenu(false) : router.push('/productos')}}>Nuestras latas</li>
                 <li className='py-4' onClick={() => {router.pathname === '/alquiler' ? setToggleMenu(false) : router.push('/alquiler')}}>Alquiler de choperas</li>
-                {/* <li className='py-4' onClick={() => {router.pathname === '/about' ? setToggleMenu(false) : router.push('/about')}}>Acerca de nosotros</li>
-                <li className='py-4' onClick={() => {router.pathname === '/contacto' ? setToggleMenu(false) : router.push('/contacto')}}>Contacto</li> */}
+                <li className='py-4' onClick={() => {router.pathname === '/' ? setToggleMenu(false) : router.push('/')}}>Acerca de nosotros</li>
+                {/* <li className='py-4' onClick={() => {router.pathname === '/contacto' ? setToggleMenu(false) : router.push('/contacto')}}>Contacto</li> */}
             </ul>
           </div>
           <div className='flex self-center gap-10'>

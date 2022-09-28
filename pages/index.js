@@ -33,7 +33,7 @@ export default function Home() {
           </div>
         </div>
 
-        <h2 className='px-4 font-semibold text-2xl text-slate-900'> Nuestros productos</h2>
+        <h2 className='px-4 font-semibold text-2xl text-center text-slate-900'> Nuestros productos</h2>
         <div className='flex flex-col md:flex-row md:gap-10 md:space-y-0 justify-between items-center p-4 space-y-10'>
           <Link href='/productos'>
             <div className='flex-1 shadow-lg  rounded-md overflow-hidden relative cursor-pointer'>
@@ -55,22 +55,68 @@ export default function Home() {
           </Link>
         </div>
         
-        <div className=' w-3/4 h-[2px] self-center rounded-lg bg-slate-300'></div>
+        <div className=' w-11/12 h-[1px] self-center rounded-lg bg-slate-300'></div>
 
-        <div className='flex flex-col p-4 space-y-2 '>
-          <h2 className='font-semibold text-xl'>Logros</h2>
-          <p className='font-montserrat text-base'>
-            Oro en Session IPA - Copa 3 ciudades 2020<br/>
-            Oro en American IPA - Copa 3 Ciudades 2021<br/>
-            Mención Especial en Red Ale - Copa 3 Ciudades 2021<br/>
-            Oro en Catharina Sour - Copa Argentina de Cervezas 2021<br/>
-            Plata en Catharina Sour - Copa Platense de Cervezas 2021<br/>
-            Plata en Golden Ale - Copa Platense de Cervezas 2021<br/>
-            Bronce en English Ipa - Copa Platense de Cervezas 2021<br/>
-            Oro en Session IPA - Copa Platense de Cervezas 2021<br/>
-            Oro en Golden - Copa 3 Ciudades 2022<br/>
-            Bronce en American IPA - Copa 3 Ciudades 2022<br/>
-          </p>
+        <div className='flex flex-col p-4 py-6 '>
+          <h2 className='font-semibold text-2xl text-center'>Reconocimientos</h2>
+          <div className='flex flex-col font-roboto'>
+            <div className='py-4 space-y-2'>
+              <h2 className='font-medium text-zinc-800 text-lg'>Golden Ale</h2>
+              <p className='text-zinc-600'>
+                Oro, Copa 3 Ciudades 2022.<br/>
+                Plata, Copa Platense de Cervezas 2021.<br/>
+              </p>
+            </div>
+            
+            <div className=' w-3/4 h-[1px] self-center rounded-lg bg-orange-300'></div>
+            
+            <div className='py-4 space-y-2'>
+              <h2 className='font-medium text-zinc-800 text-lg '>Session IPA</h2>
+              <p className='text-zinc-600'>
+                Oro, Copa 3 ciudades 2020.<br/>
+                Oro, Copa Platense de Cervezas 2021.<br/>
+              </p>
+            </div>
+
+            <div className=' w-3/4 h-[1px] self-center rounded-lg bg-orange-300'></div>
+
+            <div className='py-4 space-y-2'>
+              <h2 className='font-medium text-zinc-800 text-lg '>American IPA</h2>
+              <p className='text-zinc-600'>
+                Oro, Copa 3 Ciudades 2021.<br/>
+                Bronce, Copa Cervezas de América 2022.<br/>
+                Bronce, Copa 3 Ciudades 2022.<br/>
+              </p>
+            </div>
+            
+            <div className=' w-3/4 h-[1px] self-center rounded-lg bg-orange-300'></div>
+
+            <div className='py-4 space-y-2'>
+              <h2 className='font-medium text-zinc-800 text-lg '>Catharina Sour</h2>
+              <p className='text-zinc-600'>
+                Oro, Copa Argentina de Cervezas 2021<br/>
+                Plata, Copa Platense de Cervezas 2021<br/>
+              </p>
+            </div>
+
+            <div className=' w-3/4 h-[1px] self-center rounded-lg bg-orange-300'></div>
+
+            <div className='py-4 space-y-2'>
+              <h2 className='font-medium text-zinc-800 text-lg '>English Ipa</h2>
+              <p className='text-zinc-600'>
+                Bronce, Copa Platense de Cervezas 2021<br/>
+              </p>
+            </div>
+
+            <div className=' w-3/4 h-[1px] self-center rounded-lg bg-orange-300'></div>
+
+            <div className='py-4 space-y-2'>
+              <h2 className='font-medium text-zinc-800 text-lg '>Red Ale</h2>
+              <p className='text-zinc-600'>
+                Mención Especial, Copa 3 Ciudades 2021<br/>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </PageLayout>
