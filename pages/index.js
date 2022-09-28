@@ -57,10 +57,10 @@ export default function Home() {
         
         <div className=' w-11/12 h-[1px] self-center rounded-lg bg-slate-300'></div>
 
-        <div className='flex flex-col p-4 py-6 '>
+        <div className='flex flex-col p-4 py-6 md:grid md:grid-cols-2'>
           <h2 className='font-semibold text-2xl text-center'>Reconocimientos</h2>
-          <div className='flex flex-col font-roboto'>
-            <div className='py-4 space-y-2'>
+          <div className='flex flex-col font-roboto '>
+            <div className='py-4 space-y-2 '>
               <h2 className='font-medium text-zinc-800 text-lg'>Golden Ale</h2>
               <p className='text-zinc-600'>
                 Oro, Copa 3 Ciudades 2022.<br/>
