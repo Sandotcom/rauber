@@ -68,7 +68,7 @@ export default function Home() {
               </p>
             </div>
             
-            <div className=' w-3/4 h-[1px] self-center rounded-lg bg-orange-300'></div>
+            <div className=' w-3/4 h-[1px] self-center rounded-lg bg-orange-200'></div>
             
             <div className='py-4 space-y-2'>
               <h2 className='font-medium text-zinc-800 text-lg '>Session IPA</h2>
@@ -78,7 +78,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className=' w-3/4 h-[1px] self-center rounded-lg bg-orange-300'></div>
+            <div className=' w-3/4 h-[1px] self-center rounded-lg bg-orange-200'></div>
 
             <div className='py-4 space-y-2'>
               <h2 className='font-medium text-zinc-800 text-lg '>American IPA</h2>
@@ -89,7 +89,7 @@ export default function Home() {
               </p>
             </div>
             
-            <div className=' w-3/4 h-[1px] self-center rounded-lg bg-orange-300'></div>
+            <div className=' w-3/4 h-[1px] self-center rounded-lg bg-orange-200'></div>
 
             <div className='py-4 space-y-2'>
               <h2 className='font-medium text-zinc-800 text-lg '>Catharina Sour</h2>
@@ -99,7 +99,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className=' w-3/4 h-[1px] self-center rounded-lg bg-orange-300'></div>
+            <div className=' w-3/4 h-[1px] self-center rounded-lg bg-orange-200'></div>
 
             <div className='py-4 space-y-2'>
               <h2 className='font-medium text-zinc-800 text-lg '>English Ipa</h2>
@@ -108,7 +108,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className=' w-3/4 h-[1px] self-center rounded-lg bg-orange-300'></div>
+            <div className=' w-3/4 h-[1px] self-center rounded-lg bg-orange-200'></div>
 
             <div className='py-4 space-y-2'>
               <h2 className='font-medium text-zinc-800 text-lg '>Red Ale</h2>
