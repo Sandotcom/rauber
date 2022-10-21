@@ -256,7 +256,7 @@ const Form = () => {
           </button>
           :
           <Link 
-          href={`https://wa.me/542214205694?text=${encodeURIComponent(text)}`}
+          href={`https://wa.me/542214775678?text=${encodeURIComponent(text)}`}
           >
           <button
             type='button'
