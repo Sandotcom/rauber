@@ -19,7 +19,7 @@ const Items = ({ item }) => {
     <div className='flex py-2'>
       
       <div className='relative'>
-        <img src={portada} alt={name} className='w-20 h-20 md:w-48 md:h-48 object-cover rounded-md' />
+        <img src={portada} alt={name} className='w-20 h-32 md:w-40 md:h-40 object-cover rounded-md' />
       </div>
       
       <div className='ml-3 flex flex-1 flex-col'>

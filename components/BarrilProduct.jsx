@@ -19,7 +19,7 @@ const BarrilProduct = ({ product }) => {
   return (
     <div className='flex font-poppins rounded-md shadow bg-gray-200'>
       <div className='relative'>
-        <img src={portada} alt={name} className='w-full h-full md:w-60 object-cover rounded-l-md' />
+        <img src={portada} alt={name} className='w-full h-full md:w-60 md:h-60 object-cover rounded-l-md' />
       </div>
       <div className='flex flex-col md:w-7/12 justify-between p-3 border-slate-900'>
         <div className='flex justify-between'>
